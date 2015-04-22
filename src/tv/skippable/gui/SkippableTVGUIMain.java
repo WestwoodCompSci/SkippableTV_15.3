@@ -1,9 +1,6 @@
 package tv.skippable.gui;
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
+import javax.swing.*;
 /**
  * Main function for the app. Creates a runnable to hold the main runloop, and
  * create the fun main window.
@@ -19,6 +16,8 @@ public class SkippableTVGUIMain {
 				| IllegalAccessException | UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
+		
+		// check if logged in? idk
 		
 		// Create UI
 		SwingUtilities.invokeLater(new Runnable() {

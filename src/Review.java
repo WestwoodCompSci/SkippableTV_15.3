@@ -9,4 +9,15 @@ public class Review {
 		score = s;
 		comment = c;
 	}
+	
+	public int getScore()
+	{
+		return score;
+	}
+	
+	public String getName()
+	
+	{
+		return comment;
+	}
 }

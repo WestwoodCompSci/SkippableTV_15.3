@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ public class Season {
 	{
 		this.show = show;
 		this.seasonNumber = seasonNumber;
-		this.episodes = episodes;
+		this.episodes = orderFixer(episodes);
 	}
 	
 	//Accessors
@@ -31,13 +32,26 @@ public class Season {
 		return episodes;
 	}
 	
+	private List<Episode> orderFixer(List<Episode> preCheck)
+	{
+		List<Episode> postCheck = new ArrayList<Episode>();
+		for(int i = 0; i < preCheck.size(); i++)
+		{
+			 postCheck.add(preCheck.get(i).getEpisodeNumber() - 1, preCheck.get(i));
+		}
+		return postCheck;
+	}
+	
 	public void addEpisode(Episode episode)
 	{
-		
+		episodes.add(episode.getEpisodeNumber() - 1, episode);
 	}
 	
 	public void addEpisodes(List<Episode> episodes)
 	{
-		
+		for(Episode x : episodes)
+		{
+			this.episodes.add(x.getEpisodeNumber() - 1, x);
+		}
 	}
 }

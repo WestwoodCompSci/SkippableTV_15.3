@@ -5,7 +5,7 @@ import javax.swing.*;
  * Main function for the app. Creates a runnable to hold the main runloop, and
  * create the fun main window.
  * 
- * @author tristan
+ * @author andrew
  */
 public class SkippableTVGUIMain {
 	public static void main(String[] args) {

@@ -3,20 +3,9 @@ Database Text Document
 Fields/Classes:
 
 	Public class database
-		ArrayList<user> userList	
+		HashMap<user> userMap	
 		
-	Public class user
-			String name
-			String password
-			ArrayList<Show> shows
-			
 	
-		
-
-
-
-
-
 
 //This is where text will go for the database to practice manipulating and storing
 

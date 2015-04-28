@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class LoginDialogue extends JDialog {
+	private static final long serialVersionUID = -5853916478565948100L;
+
 	private JTextField username;
 	private JPasswordField password;
 	
@@ -65,13 +67,32 @@ public class LoginDialogue extends JDialog {
 		
 		// Add the "Forgot Password?", "Log In" and "Cancel" buttons
 		Box buttons = Box.createHorizontalBox();
-		
-		JButton forgot = new JButton("Forgot Password?");
+
+		JButton forgot = new JButton("Forgot Password");
+		forgot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+			}
+		});
 		buttons.add(forgot);
+
+		JButton register = new JButton("Register");
+		register.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub	
+			}
+		});
+		buttons.add(register);
+		
 		buttons.add(Box.createHorizontalGlue());
 		
-		
+		// login button actually logs the user in, yo
 		JButton logIn = new JButton("Log In");
+		logIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub				
+			}
+		});
 		buttons.add(logIn);
 		
 		// clicking cancel terminates the application

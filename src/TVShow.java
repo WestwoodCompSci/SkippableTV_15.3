@@ -12,13 +12,4 @@ public class TVShow {
 		seasons = s;
 	}
 	
-	public String getName()
-	{
-		return name;
-	}
-	
-	public List<Season> getSeasons()
-	{
-		return seasons;
-	}
 }

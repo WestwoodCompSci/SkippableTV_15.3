@@ -2,11 +2,15 @@ Database Text Document
 
 Fields/Classes:
 
+	Public class database
+		ArrayList<user> userList	
+		
 	Public class user
-		String name
-		String password
-		ArrayList<Show> shows
-
+			String name
+			String password
+			ArrayList<Show> shows
+			
+	
 		
 
 

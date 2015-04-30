@@ -40,6 +40,10 @@ public class AddShowWindow {
 		Box vBox = Box.createVerticalBox();
 		vBox.add(Box.createHorizontalStrut(5));
 		JTextPane titlePane = new JTextPane();
+		titlePane.setSize(309,50);
+		titlePane.setPreferredSize(new Dimension(309,50));
+		titlePane.setMaximumSize(new Dimension(309,50));
+		titlePane.setMinimumSize(new Dimension(309,50));
 		JTextPane descPane = new JTextPane();
 		JButton cancelButton = new JButton("Cancel");
 		JButton addButton = new JButton("Add");

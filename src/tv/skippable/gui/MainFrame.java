@@ -4,8 +4,10 @@ package tv.skippable.gui;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -83,10 +85,17 @@ public class MainFrame extends JFrame
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
+		ImageIcon i = new ImageIcon("left arrow.png");
+		
+		JButton arrow1 = new JButton(i);
+		
 		showBox.add(Box.createHorizontalStrut(10));
 		showBox.add(title);
 		showBox.add(Box.createHorizontalStrut(50));
 		showBox.add(seasonNum);
+		showBox.add(Box.createHorizontalStrut(5));
+		showBox.add(arrow1);
+		showBox.add(Box.createHorizontalStrut(5));
 		showBox.add(Box.createHorizontalStrut(10));
 		showBox.add(seasonPro);
 		showBox.add(Box.createHorizontalStrut(30));
@@ -110,7 +119,7 @@ public class MainFrame extends JFrame
 ;			
 		
 		
-		//JLabel showBox = new JLabel (show)
+		
 		
 		
 		

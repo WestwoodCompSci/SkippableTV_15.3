@@ -2,6 +2,7 @@ package tv.skippable.gui;
 
 
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
@@ -33,8 +34,9 @@ public class MainFrame extends JFrame
 		
 		
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		
+		frame.setForeground(Color.GREEN);
 		this.setContentPane(frame);
+		
 		
 		
 		
@@ -50,7 +52,7 @@ public class MainFrame extends JFrame
 		vBox.add(menuBox);
 		frame.add(Box.createVerticalStrut(10));
 		vBox.add(showBox);
-		frame.add(Box.createVerticalStrut(10));
+		frame.add(Box.createVerticalStrut(50));
 		vBox.add(episodes);
 		frame.add(Box.createVerticalStrut(10));
 		vBox.add(episodeProgress);
@@ -64,10 +66,12 @@ public class MainFrame extends JFrame
 		//Menu Box
 		
 		JButton addShow = new JButton ("Add Show...");
-		addShow.setFont(new Font("Times Roman", Font.PLAIN, 40));
+		addShow.setFont(new Font("Times Roman", Font.PLAIN, 20));
+		addShow.setMaximumSize(new Dimension(40,20));
 		
 		JButton myShows = new JButton ("My Shows...");
-		myShows.setFont(new Font("Times Roman", Font.BOLD, 40));
+		myShows.setFont(new Font("Times Roman", Font.PLAIN, 20));
+		
 		
 		menuBox.add(Box.createHorizontalStrut(10));
 		menuBox.add(addShow);
@@ -85,9 +89,12 @@ public class MainFrame extends JFrame
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
-		ImageIcon i = new ImageIcon("left arrow.png");
+		ImageIcon i1 = new ImageIcon("left arrow.png");
+		ImageIcon i2 = new ImageIcon("right arrow.png");
 		
-		JButton arrow1 = new JButton(i);
+		JButton arrow1 = new JButton(i1);
+		
+		JButton arrow2 = new JButton(i2);
 		
 		showBox.add(Box.createHorizontalStrut(10));
 		showBox.add(title);
@@ -95,9 +102,10 @@ public class MainFrame extends JFrame
 		showBox.add(seasonNum);
 		showBox.add(Box.createHorizontalStrut(5));
 		showBox.add(arrow1);
-		showBox.add(Box.createHorizontalStrut(5));
-		showBox.add(Box.createHorizontalStrut(10));
+		showBox.add(Box.createHorizontalStrut(15));
 		showBox.add(seasonPro);
+		showBox.add(Box.createHorizontalStrut(5));
+		showBox.add(arrow2);
 		showBox.add(Box.createHorizontalStrut(30));
 		
 		
@@ -115,7 +123,36 @@ public class MainFrame extends JFrame
 			episodeProgress.add(question);
 			episodeProgress.add(Box.createHorizontalStrut(20));
 			episodeProgress.add(episodeList);
-			episodeProgress.add(Box.createHorizontalStrut(50))
+			episodeProgress.add(Box.createHorizontalStrut(50));
+			
+		//labelTime Box
+			
+			JLabel question2 = new JLabel("How much time do I have?");
+			
+			labelTime.add(question2);
+			
+		//time
+			
+			JLabel hours = new JLabel ("Hours:");
+			JTextPane hoursText = new JTextPane();
+			
+			 JLabel minutes = new JLabel ("Minutes:");
+			 JTextPane minutesText = new JTextPane();
+			 
+			 time.add(Box.createHorizontalStrut(10));
+			 time.add(hours);
+			 time.add(Box.createHorizontalStrut(10));
+			 time.add(hoursText);
+			 time.add(Box.createHorizontalStrut(40));
+			 time.add(minutes);
+			 time.add(Box.createHorizontalStrut(10));
+			 time.add(minutesText);
+			 time.add(Box.createHorizontalStrut(10));
+			 
+			//go button
+			 
+			 //remove button
+			
 ;			
 		
 		

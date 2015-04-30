@@ -77,8 +77,8 @@ public static void main(String[] args)
 		}} );
 }
 }
-
-
+//todo: add art aspect
+//todo: make the buttons do things
 
 
 

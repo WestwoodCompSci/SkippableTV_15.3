@@ -22,8 +22,7 @@ public class SkippableTVGUIMain {
 		// Create UI
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				MainWindow w = new MainWindow();
-				w.showWindow();
+				new MainFrame();
 			}
 		});
 	}

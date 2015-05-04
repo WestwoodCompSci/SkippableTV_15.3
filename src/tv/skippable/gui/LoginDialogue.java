@@ -93,7 +93,7 @@ public class LoginDialogue extends JDialog {
 				// TODO Auto-generated method stub	
 				MainFrame w = new MainFrame();
 				w.setVisible(true);
-				
+				dispose();
 			}
 		});
 		buttons.add(logIn);

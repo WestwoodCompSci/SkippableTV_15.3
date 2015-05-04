@@ -87,14 +87,14 @@ public class MainFrame extends JFrame
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
-		ImageIcon i1 = new ImageIcon("left-arrow-transparent.png");
+		ImageIcon i1 = new ImageIcon("left arrow.png");
 		Image image = i1.getImage();
 		Image newIm = image.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi1 = new ImageIcon(newIm);
 		
 		
 		
-		ImageIcon i2 = new ImageIcon("right-arrow-transparent.png");
+		ImageIcon i2 = new ImageIcon("right arrow.png");
 		Image image2 = i2.getImage();
 		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi2 = new ImageIcon(newIm2);
@@ -120,7 +120,7 @@ public class MainFrame extends JFrame
 		
 		//episodes
 		
-			//png 
+			
 		//episode Progress
 		
 			JLabel question = new JLabel("What Episode?");
@@ -142,7 +142,7 @@ public class MainFrame extends JFrame
 			
 			labelTime.add(question2);
 			
-		//time
+			//time
 			
 			JLabel hours = new JLabel ("Hours:");
 			JTextPane hoursText = new JTextPane();
@@ -153,35 +153,59 @@ public class MainFrame extends JFrame
 			 JLabel minutes = new JLabel ("Minutes:");
 			 JTextPane minutesText = new JTextPane();
 			 minutesText.setPreferredSize(new Dimension(100,40));
-			minutesText.setMaximumSize(new Dimension(100,40));
+			 minutesText.setMaximumSize(new Dimension(100,40));
+			
+			
 			
 			//go picture
-			ImageIcon i3 = new ImageIcon("go-button-transparent");
+			ImageIcon i3 = new ImageIcon("go button");
 			Image image3 = i3.getImage();
-			Image newIm3 = image3.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+			Image newIm3 = image3.getScaledInstance(200,40 , java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi3 = new ImageIcon(newIm3);
 			
+			//goButton
 			JButton goButton = new JButton(newi3);
-			 
+			goButton.setPreferredSize(new Dimension(200,40));
+			goButton.setMaximumSize(new Dimension(200,40));
+		
+			
+			//remove button
+			
+			ImageIcon i4 = new ImageIcon("remove button");
+			Image image4 = i4.getImage();
+			Image newIm4 = image4.getScaledInstance(50, 20, java.awt.Image.SCALE_SMOOTH);
+			ImageIcon newi4 = new ImageIcon(newIm4);
+			
+			//removeButton
+			JButton removeButton = new JButton(newi4);
+			goButton.setPreferredSize(new Dimension(200,40));
+			goButton.setMinimumSize(new Dimension(200,40));
+			
+			//timeBox
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(hours);
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(hoursText);
-			 time.add(Box.createHorizontalStrut(40));
+			 time.add(Box.createHorizontalStrut(10));
 			 time.add(minutes);
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(minutesText);
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(goButton);
 			 time.add(Box.createHorizontalStrut(10));
-			 
-			 
-			//go button
-			 
+			 time.add(removeButton);
+			 time.add(Box.createHorizontalStrut(10));
 			 
 			 
 			 
-			 //remove button
+			
+			 
+			 
+			 
+			 
+			 
+			 
+			 
 			
 			
 		

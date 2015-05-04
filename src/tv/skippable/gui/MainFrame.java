@@ -1,7 +1,5 @@
 package tv.skippable.gui;
 
-
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -172,12 +170,11 @@ public class MainFrame extends JFrame
 			 
 			 //remove button
 			
-;			
+			
 		
 		
 		
-		
-		
+
 		
 		
 		
@@ -192,11 +189,16 @@ public class MainFrame extends JFrame
 		
 		
 		
+	}
 		
 		
 		
 		
-			}
+		
+		
+		
+		
+			
 	
 	
 		

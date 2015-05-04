@@ -1,19 +1,1 @@
 Database Text Document
-
-Fields/Classes:
-
-	Public class database
-		HashMap<user> userMap	
-		
-	
-
-//This is where text will go for the database to practice manipulating and storing
-
-
-
-
-
-
-
-
-

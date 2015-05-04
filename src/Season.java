@@ -50,9 +50,9 @@ public class Season {
 		setLength();
 	}
 	
-	public void addEpisodes(List<Episode> episodes)
+	public void addEpisodes(List<Episode> eps)
 	{
-		for(Episode x : episodes)
+		for(Episode x : eps)
 		{
 			this.episodes.add(x.getEpisodeNumber() - 1, x);
 		}

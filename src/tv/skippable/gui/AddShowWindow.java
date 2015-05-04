@@ -3,6 +3,7 @@ package tv.skippable.gui;
 
 
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -56,7 +57,10 @@ public class AddShowWindow {
 		vBox.add(descPane);
 		vBox.add(smallHBox);
 		
-		
+		addButton.addActionListener(new ActionListener()
+		{
+			
+		})
 		
 		
 		hBox.add(vBox);

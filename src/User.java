@@ -18,5 +18,8 @@ public class User {
 		showList.add(show);
 	}
 	
-	
+	public List<TVShow> getShows()
+	{
+		return showList;
+	}
 }

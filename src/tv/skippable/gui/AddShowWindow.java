@@ -3,6 +3,7 @@ package tv.skippable.gui;
 
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Box;
@@ -56,15 +57,22 @@ public class AddShowWindow {
 		vBox.add(Box.createVerticalStrut(5));
 		vBox.add(descPane);
 		vBox.add(smallHBox);
-		
-		addButton.addActionListener(new ActionListener()
-		{
-			
-		})
-		
-		
 		hBox.add(vBox);
 		hBox.add(Box.createHorizontalStrut(5));
+		
+		
+		addButton.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+			
+		});
+		
+		
+	
 		frame.pack();
 		frame.setVisible(true);
 	}

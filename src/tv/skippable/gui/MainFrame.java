@@ -26,8 +26,8 @@ public class MainFrame extends JFrame
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setPreferredSize(new Dimension(700,500));
-		this.setLocation(450, 200);
+		this.setPreferredSize(new Dimension(800,500));
+		this.setLocation(350, 200);
 		
 		//vBox
 		Box vBox = Box.createVerticalBox();
@@ -96,13 +96,13 @@ public class MainFrame extends JFrame
 		
 		
 		
-		ImageIcon i2 = new ImageIcon("right arrow.png");
+		ImageIcon i2 = new ImageIcon("right-arrow-transparent.png");
 		Image image2 = i2.getImage();
 		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
-		ImageIcon newi2 = new ImageIcon(newIm);
+		ImageIcon newi2 = new ImageIcon(newIm2);
 		
 		JButton arrow1 = new JButton(newi1);
-		arrow1.setPreferredSize(new Dimension(20,20));
+		//arrow1.setPreferredSize(new Dimension(40,40));
 		
 		JButton arrow2 = new JButton(newi2);
 		
@@ -111,7 +111,7 @@ public class MainFrame extends JFrame
 		showBox.add(title);
 		showBox.add(Box.createHorizontalStrut(50));
 		showBox.add(seasonNum);
-		showBox.add(Box.createHorizontalStrut(5));
+		showBox.add(Box.createHorizontalStrut(1));
 		showBox.add(arrow1);
 		showBox.add(Box.createHorizontalStrut(15));
 		showBox.add(seasonPro);
@@ -129,6 +129,8 @@ public class MainFrame extends JFrame
 			
 			
 			JComboBox episodeList = new JComboBox ();
+			episodeList.setPreferredSize(new Dimension(200,40));
+			episodeList.setMaximumSize(new Dimension(200,40));
 			
 			episodeProgress.add(Box.createHorizontalStrut(10));
 			episodeProgress.add(question);
@@ -146,9 +148,14 @@ public class MainFrame extends JFrame
 			
 			JLabel hours = new JLabel ("Hours:");
 			JTextPane hoursText = new JTextPane();
+			hoursText.setPreferredSize(new Dimension(100,40));
+			hoursText.setMaximumSize(new Dimension(100,40));
+			
 			
 			 JLabel minutes = new JLabel ("Minutes:");
 			 JTextPane minutesText = new JTextPane();
+			 minutesText.setPreferredSize(new Dimension(100,40));
+			minutesText.setMaximumSize(new Dimension(100,40));
 			 
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(hours);
@@ -161,6 +168,7 @@ public class MainFrame extends JFrame
 			 time.add(Box.createHorizontalStrut(10));
 			 
 			//go button
+			 
 			 
 			 //remove button
 			
@@ -190,15 +198,9 @@ public class MainFrame extends JFrame
 		
 			}
 	
-	public static void main(String[] args)
-	{
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new MainFrame();
-			}} );
-		
+	
 		
 }
 
-}
+
 

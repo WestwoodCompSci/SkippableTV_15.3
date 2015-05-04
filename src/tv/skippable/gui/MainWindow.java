@@ -15,7 +15,7 @@ public class MainWindow extends JFrame {
 		this.setTitle("skippable.tv");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		// Set minimum size, and centre the window
+		// Set minimum size, and center the window
 		this.setPreferredSize(new Dimension(640, 480));
 		this.setMinimumSize(this.getPreferredSize());
 		

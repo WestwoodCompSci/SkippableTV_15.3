@@ -34,7 +34,7 @@ public class MainFrame extends JFrame
 		
 		
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		frame.setForeground(Color.GREEN);
+		
 		this.setContentPane(frame);
 		
 		
@@ -67,17 +67,17 @@ public class MainFrame extends JFrame
 		
 		JButton addShow = new JButton ("Add Show...");
 		addShow.setFont(new Font("Times Roman", Font.PLAIN, 20));
-		addShow.setMaximumSize(new Dimension(40,20));
+		addShow.setPreferredSize(new Dimension(40,20));
 		
 		JButton myShows = new JButton ("My Shows...");
 		myShows.setFont(new Font("Times Roman", Font.PLAIN, 20));
+		addShow.setPreferredSize(new Dimension(40,20));
 		
-		
-		menuBox.add(Box.createHorizontalStrut(10));
+		menuBox.add(Box.createHorizontalStrut(5));
 		menuBox.add(addShow);
-		menuBox.add(Box.createHorizontalStrut(100));
+		menuBox.add(Box.createHorizontalStrut(50));
 		menuBox.add(myShows);
-		menuBox.add(Box.createHorizontalStrut(10));
+		menuBox.add(Box.createHorizontalStrut(5));
 		
 		//showBox
 		
@@ -89,12 +89,23 @@ public class MainFrame extends JFrame
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
-		ImageIcon i1 = new ImageIcon("left arrow.png");
+		ImageIcon i1 = new ImageIcon("left-arrow-transparent.png");
+		Image image = i1.getImage();
+		Image newIm = image.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon newi1 = new ImageIcon(newIm);
+		
+		
+		
 		ImageIcon i2 = new ImageIcon("right arrow.png");
+		Image image2 = i2.getImage();
+		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon newi2 = new ImageIcon(newIm);
 		
-		JButton arrow1 = new JButton(i1);
+		JButton arrow1 = new JButton(newi1);
+		arrow1.setPreferredSize(new Dimension(20,20));
 		
-		JButton arrow2 = new JButton(i2);
+		JButton arrow2 = new JButton(newi2);
+		
 		
 		showBox.add(Box.createHorizontalStrut(10));
 		showBox.add(title);

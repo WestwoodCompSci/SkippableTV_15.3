@@ -7,6 +7,7 @@ public class Season {
 	private List<Episode> episodes;
 	private String show;
 	private int seasonNumber;
+	private int length; //in minutes
 	
 	//Constructor
 	public Season(String show, int seasonNumber, List<Episode> episodes)
@@ -14,6 +15,7 @@ public class Season {
 		this.show = show;
 		this.seasonNumber = seasonNumber;
 		this.episodes = orderFixer(episodes);
+		setLength();
 	}
 	
 	//Accessors
@@ -45,6 +47,7 @@ public class Season {
 	public void addEpisode(Episode episode)
 	{
 		episodes.add(episode.getEpisodeNumber() - 1, episode);
+		setLength();
 	}
 	
 	public void addEpisodes(List<Episode> episodes)
@@ -53,5 +56,22 @@ public class Season {
 		{
 			this.episodes.add(x.getEpisodeNumber() - 1, x);
 		}
+		setLength();
+	}
+	
+	public int getLength()
+	{
+		return length;
+	}
+	
+	public void setLength()
+	{
+		int total = 0;
+		for (int i = 0; i < episodes.size(); i++)
+		{
+			total += episodes.get(i).getLength();
+		}
+		
+		length = total;
 	}
 }

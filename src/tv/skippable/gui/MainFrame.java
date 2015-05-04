@@ -173,7 +173,7 @@ public class MainFrame extends JFrame
 			
 			ImageIcon i4 = new ImageIcon("remove button");
 			Image image4 = i4.getImage();
-			Image newIm4 = image4.getScaledInstance(50, 20, java.awt.Image.SCALE_SMOOTH);
+			Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi4 = new ImageIcon(newIm4);
 			
 			//removeButton

@@ -16,7 +16,7 @@ public class RegisterDialogue extends JDialog {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		// Set minimum size, and centre the window
-		this.setPreferredSize(new Dimension(400, 500));
+		this.setPreferredSize(new Dimension(380, 185));
 		this.setMinimumSize(this.getPreferredSize());
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -27,6 +27,51 @@ public class RegisterDialogue extends JDialog {
 		screenSize.height -= this.getPreferredSize().height / 2;
 		
 		this.setLocation(screenSize.width, screenSize.height);
+		
+		Box vBox=Box.createVerticalBox();
+		Box titleBox=Box.createHorizontalBox();
+		Box nameBox=Box.createHorizontalBox();
+		Box passBox=Box.createHorizontalBox();
+		Box buttonBox=Box.createHorizontalBox();
+		
+		vBox.add(titleBox);
+		vBox.add(nameBox);
+		vBox.add(Box.createVerticalStrut(15));
+		vBox.add(passBox);
+		vBox.add(buttonBox);
+		
+		this.add(vBox);
+		
+		JLabel title=new JLabel("Enter your desired username and password.");
+		titleBox.add(title);
+		
+		nameBox.add(Box.createHorizontalStrut(5));
+		JLabel nameLabel=new JLabel("Username:");
+		nameBox.add(nameLabel);
+		nameBox.add(Box.createHorizontalStrut(5));
+		JTextField nameField=new JTextField();
+		//nameField.setMaximumSize(new Dimension(150,50));
+		//nameField.setMinimumSize(new Dimension(150,50));
+		//nameField.setPreferredSize(new Dimension(150,50));
+		nameBox.add(nameField);
+		
+		passBox.add(Box.createHorizontalStrut(5));
+		JLabel passLabel=new JLabel("Password:");
+		passBox.add(passLabel);
+		passBox.add(Box.createHorizontalStrut(7));
+		JTextField passField=new JTextField();
+		passBox.add(passField);
+		
+		JButton confirmButton=new JButton("Confirm");
+		buttonBox.add(confirmButton);
+		JButton cancelButton=new JButton("Cancel");
+		buttonBox.add(cancelButton);
+		
+		
+		this.pack();
+		
+		
+		
 	}
 	
 	// test method

@@ -154,6 +154,14 @@ public class MainFrame extends JFrame
 			 JTextPane minutesText = new JTextPane();
 			 minutesText.setPreferredSize(new Dimension(100,40));
 			minutesText.setMaximumSize(new Dimension(100,40));
+			
+			//go picture
+			ImageIcon i3 = new ImageIcon("go-button-transparent");
+			Image image3 = i3.getImage();
+			Image newIm3 = image3.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+			ImageIcon newi3 = new ImageIcon(newIm3);
+			
+			JButton goButton = new JButton(newi3);
 			 
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(hours);
@@ -164,8 +172,13 @@ public class MainFrame extends JFrame
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(minutesText);
 			 time.add(Box.createHorizontalStrut(10));
+			 time.add(goButton);
+			 time.add(Box.createHorizontalStrut(10));
+			 
 			 
 			//go button
+			 
+			 
 			 
 			 
 			 //remove button

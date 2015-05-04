@@ -90,7 +90,10 @@ public class LoginDialogue extends JDialog {
 		JButton logIn = new JButton("Log In");
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub				
+				// TODO Auto-generated method stub	
+				MainFrame w = new MainFrame();
+				w.setVisible(true);
+				
 			}
 		});
 		buttons.add(logIn);

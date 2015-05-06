@@ -2,6 +2,8 @@ package tv.skippable.gui;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -34,9 +36,11 @@ public class RegisterDialogue extends JDialog {
 		Box passBox=Box.createHorizontalBox();
 		Box buttonBox=Box.createHorizontalBox();
 		
+		vBox.add(Box.createVerticalStrut(10));
 		vBox.add(titleBox);
+		vBox.add(Box.createVerticalStrut(10));
 		vBox.add(nameBox);
-		vBox.add(Box.createVerticalStrut(15));
+		vBox.add(Box.createVerticalStrut(5));
 		vBox.add(passBox);
 		vBox.add(buttonBox);
 		
@@ -50,22 +54,36 @@ public class RegisterDialogue extends JDialog {
 		nameBox.add(nameLabel);
 		nameBox.add(Box.createHorizontalStrut(5));
 		JTextField nameField=new JTextField();
-		//nameField.setMaximumSize(new Dimension(150,50));
+		nameField.setMaximumSize(new Dimension(300,80));
 		//nameField.setMinimumSize(new Dimension(150,50));
 		//nameField.setPreferredSize(new Dimension(150,50));
 		nameBox.add(nameField);
+		nameBox.add(Box.createHorizontalStrut(5));
 		
 		passBox.add(Box.createHorizontalStrut(5));
 		JLabel passLabel=new JLabel("Password:");
 		passBox.add(passLabel);
 		passBox.add(Box.createHorizontalStrut(7));
 		JTextField passField=new JTextField();
+		passField.setMaximumSize(new Dimension(300,80));
 		passBox.add(passField);
+		passBox.add(Box.createHorizontalStrut(5));
 		
 		JButton confirmButton=new JButton("Confirm");
 		buttonBox.add(confirmButton);
 		JButton cancelButton=new JButton("Cancel");
 		buttonBox.add(cancelButton);
+		cancelButton.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+			
+		});
+		
+		
+		
+		
 		
 		
 		this.pack();

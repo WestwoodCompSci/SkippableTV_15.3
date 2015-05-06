@@ -30,6 +30,11 @@ public class Database {
 		return userList;
 	}
 	
+	public List<Review> getreviewList()
+	{
+		return reviewList;
+	}
+	
 	//public void addUser(User a)
 	//{
 	//	userList.add(a);

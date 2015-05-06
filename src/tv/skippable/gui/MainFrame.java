@@ -1,36 +1,28 @@
 package tv.skippable.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Image;
+import java.awt.*;
 
-import javax.swing.Box;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
-public class MainFrame extends JFrame
-
-{
-	public MainFrame()
-	{
+public class MainFrame extends JFrame {
+	public MainFrame() {
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setPreferredSize(new Dimension(800,500));
-		this.setLocation(350, 200);
+		this.setMinimumSize(this.getPreferredSize());
+		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		screenSize.width /= 2;
+		screenSize.height /= 2;
+
+		screenSize.width -= this.getPreferredSize().width / 2;
+		screenSize.height -= this.getPreferredSize().height / 2;
+		
+		this.setLocation(screenSize.width, screenSize.height);
 		
 		//vBox
 		Box vBox = Box.createVerticalBox();
-		
-		
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
 		this.setContentPane(frame);
@@ -62,13 +54,10 @@ public class MainFrame extends JFrame
 		
 		
 		//Menu Box
-		
 		JButton addShow = new JButton ("Add Show...");
-		addShow.setFont(new Font("Times Roman", Font.PLAIN, 20));
 		addShow.setPreferredSize(new Dimension(40,20));
 		
 		JButton myShows = new JButton ("My Shows...");
-		myShows.setFont(new Font("Times Roman", Font.PLAIN, 20));
 		addShow.setPreferredSize(new Dimension(40,20));
 		
 		menuBox.add(Box.createHorizontalStrut(5));
@@ -78,9 +67,8 @@ public class MainFrame extends JFrame
 		menuBox.add(Box.createHorizontalStrut(5));
 		
 		//showBox
-		
-		JLabel title = new JLabel ("Title of Show");
-		title.setFont(new Font("Times Roman", Font.BOLD, 40));
+		JLabel title = new JLabel("Title of Show");
+		title.setFont(title.getFont().deriveFont(40));
 		
 		String s = "Season 3" + ":" + "" + "2hrs 30 min";
 		
@@ -122,124 +110,74 @@ public class MainFrame extends JFrame
 		
 			
 		//episode Progress
+		JLabel question = new JLabel("What Episode?");
 		
-			JLabel question = new JLabel("What Episode?");
-			
-			
-			JComboBox episodeList = new JComboBox ();
-			episodeList.setPreferredSize(new Dimension(200,40));
-			episodeList.setMaximumSize(new Dimension(200,40));
-			
-			episodeProgress.add(Box.createHorizontalStrut(10));
-			episodeProgress.add(question);
-			episodeProgress.add(Box.createHorizontalStrut(20));
-			episodeProgress.add(episodeList);
-			episodeProgress.add(Box.createHorizontalStrut(50));
+		JComboBox episodeList = new JComboBox ();
+		episodeList.setPreferredSize(new Dimension(200,40));
+		episodeList.setMaximumSize(new Dimension(200,40));
+		
+		episodeProgress.add(Box.createHorizontalStrut(10));
+		episodeProgress.add(question);
+		episodeProgress.add(Box.createHorizontalStrut(20));
+		episodeProgress.add(episodeList);
+		episodeProgress.add(Box.createHorizontalStrut(50));
 			
 		//labelTime Box
-			
-			JLabel question2 = new JLabel("How much time do I have?");
-			
-			labelTime.add(question2);
-			
-			//time
-			
-			JLabel hours = new JLabel ("Hours:");
-			JTextPane hoursText = new JTextPane();
-			hoursText.setPreferredSize(new Dimension(100,40));
-			hoursText.setMaximumSize(new Dimension(100,40));
-			
-			
-			 JLabel minutes = new JLabel ("Minutes:");
-			 JTextPane minutesText = new JTextPane();
-			 minutesText.setPreferredSize(new Dimension(100,40));
-			 minutesText.setMaximumSize(new Dimension(100,40));
-			
-			
-			
-			//go picture
-			ImageIcon i3 = new ImageIcon("go button");
-			Image image3 = i3.getImage();
-			Image newIm3 = image3.getScaledInstance(200,40 , java.awt.Image.SCALE_SMOOTH);
-			ImageIcon newi3 = new ImageIcon(newIm3);
-			
-			//goButton
-			JButton goButton = new JButton(newi3);
-			goButton.setPreferredSize(new Dimension(200,40));
-			goButton.setMaximumSize(new Dimension(200,40));
+		JLabel question2 = new JLabel("How much time do I have?");
 		
+		labelTime.add(question2);
 			
-			//remove button
-			
-			ImageIcon i4 = new ImageIcon("remove button");
-			Image image4 = i4.getImage();
-			Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
-			ImageIcon newi4 = new ImageIcon(newIm4);
-			
-			//removeButton
-			JButton removeButton = new JButton(newi4);
-			goButton.setPreferredSize(new Dimension(200,40));
-			goButton.setMinimumSize(new Dimension(200,40));
-			
-			//timeBox
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(hours);
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(hoursText);
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(minutes);
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(minutesText);
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(goButton);
-			 time.add(Box.createHorizontalStrut(10));
-			 time.add(removeButton);
-			 time.add(Box.createHorizontalStrut(10));
-			 
-			 
-			 
-			
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			
-			
+		//time
+		JLabel hours = new JLabel ("Hours:");
+		JTextPane hoursText = new JTextPane();
+		hoursText.setPreferredSize(new Dimension(100,40));
+		hoursText.setMaximumSize(new Dimension(100,40));
+		
+		JLabel minutes = new JLabel ("Minutes:");
+		JTextPane minutesText = new JTextPane();
+		minutesText.setPreferredSize(new Dimension(100,40));
+		minutesText.setMaximumSize(new Dimension(100,40));
 		
 		
+		//go picture
+		ImageIcon i3 = new ImageIcon("go button");
+		Image image3 = i3.getImage();
+		Image newIm3 = image3.getScaledInstance(200,40 , java.awt.Image.SCALE_SMOOTH);
+		ImageIcon newi3 = new ImageIcon(newIm3);
 		
-
+		//goButton
+		JButton goButton = new JButton(newi3);
+		goButton.setPreferredSize(new Dimension(200,40));
+		goButton.setMaximumSize(new Dimension(200,40));
 		
 		
+		//remove button
+		ImageIcon i4 = new ImageIcon("remove button");
+		Image image4 = i4.getImage();
+		Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon newi4 = new ImageIcon(newIm4);
 		
-	
-
-		
-	
-		
-		
+		//removeButton
+		JButton removeButton = new JButton(newi4);
+		goButton.setPreferredSize(new Dimension(200,40));
+		goButton.setMinimumSize(new Dimension(200,40));
+			
+		// timeBox
+		time.add(Box.createHorizontalStrut(10));
+		time.add(hours);
+		time.add(Box.createHorizontalStrut(10));
+		time.add(hoursText);
+		time.add(Box.createHorizontalStrut(10));
+		time.add(minutes);
+		time.add(Box.createHorizontalStrut(10));
+		time.add(minutesText);
+		time.add(Box.createHorizontalStrut(10));
+		time.add(goButton);
+		time.add(Box.createHorizontalStrut(10));
+		time.add(removeButton);
+		time.add(Box.createHorizontalStrut(10));
+			 
 		this.pack();
-		this.setVisible(true);
-		
-		
-		
-	}
-		
-		
-		
-		
-		
-		
-		
-		
-			
-	
-	
-		
+		this.setVisible(true);	
+	}	
 }
-
-
-

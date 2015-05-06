@@ -9,6 +9,7 @@ public class Database {
 //	data stems from list of users
 	
 	ArrayList<TVShow> showList;
+	ArrayList<Review> reviewList; //no idea what we're doing
 //	data stems from user inputs into show collection
 	
 	
@@ -16,6 +17,7 @@ public class Database {
 	{
 		userList = new ArrayList<User>();
 		showList = new ArrayList<TVShow>();
+		reviewList = new ArrayList<Review>();
 	}
 
 	public List<TVShow> getshowList()

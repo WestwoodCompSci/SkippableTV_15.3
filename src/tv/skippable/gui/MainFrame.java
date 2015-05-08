@@ -110,8 +110,6 @@ public class MainFrame extends JFrame {
 		
 			
 		//episode Progress
-		JLabel question = new JLabel("What Episode?");
-		
 
 			JLabel question = new JLabel("What Episode?");
 			

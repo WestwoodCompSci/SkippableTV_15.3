@@ -5,22 +5,22 @@ import java.util.List;
 public class TVShow {
 
 	private String name;
-	private List <Season> seasons;
+	private List <Episode> episodes;
 	private int length; //in minutes
-	public TVShow(String n, List <Season> s)
+	public TVShow(String n, List <Episode> eps)
 	{
 		name = n;
-		seasons = s;
+		episodes = eps;
 		setLength();
-		orderFixer(seasons);
+		orderFixer(episodes);
 	}
 	
-	private List<Season> orderFixer(List<Season> preCheck)
+	private List<Episode> orderFixer(List<Episode> preCheck)
 	{
-		List<Season> postCheck = new ArrayList<Season>();
+		List<Episode> postCheck = new ArrayList<Episode>();
 		for(int i = 0; i < preCheck.size(); i++)
 		{
-			 postCheck.add(preCheck.get(i).getSeasonNumber() - 1, preCheck.get(i));
+			 postCheck.add(preCheck.get(i).getEpisodeNumber() - 1, preCheck.get(i));
 		}
 		return postCheck;
 	}
@@ -30,22 +30,23 @@ public class TVShow {
 		return name;
 	}
 	
-	public List<Season> getSeasons()
+	public List<Episode> getEpisodes()
 	{
-		return seasons;
+		return episodes;
 	}
 	
-	public void addSeason(Season s)
+	public void addEpisode(Episode ep)
 	{
-		seasons.add(s.getSeasonNumber() - 1, s);
+		episodes.add(ep);
 		setLength();
+		orderFixer(episodes);
 	}
 	
-	public void addSeasons(List<Season> ssns)
+	public void addEpisodes(List<Episode> eps)
 	{
-		for(Season x : ssns)
+		for(Episode x : eps)
 		{
-			this.seasons.add(x.getSeasonNumber() - 1, x);
+			this.addEpisode(x);
 		}
 		setLength();
 	}
@@ -53,9 +54,9 @@ public class TVShow {
 	public void setLength()
 	{
 		int total = 0;
-		for (int i = 0; i < seasons.size(); i++)
+		for (int i = 0; i < episodes.size(); i++)
 		{
-			total += seasons.get(i).getLength();
+			total += episodes.get(i).getLength();
 		}
 		
 		length = total;
@@ -65,4 +66,6 @@ public class TVShow {
 	{
 		return length;
 	}
+	
+	
 }

@@ -139,50 +139,56 @@ public class MainFrame extends JFrame
 		//labelTime Box
 			
 			JLabel question2 = new JLabel("How much time do I have?");
+			question2.setFont(new Font("Times Roman", Font.BOLD, 20));
 			
+			labelTime.add(Box.createHorizontalStrut(10));
 			labelTime.add(question2);
+			labelTime.add(Box.createHorizontalStrut(500));
 			
 			//time
 			
 			JLabel hours = new JLabel ("Hours:");
 			JTextPane hoursText = new JTextPane();
 			hoursText.setPreferredSize(new Dimension(100,40));
+			hoursText.setMinimumSize(new Dimension(100,40));
 			hoursText.setMaximumSize(new Dimension(100,40));
 			
 			
 			 JLabel minutes = new JLabel ("Minutes:");
 			 JTextPane minutesText = new JTextPane();
 			 minutesText.setPreferredSize(new Dimension(100,40));
+			 minutesText.setMinimumSize(new Dimension(100,40));
 			 minutesText.setMaximumSize(new Dimension(100,40));
 			
 			
 			
 			//go picture
-			ImageIcon i3 = new ImageIcon("go button");
+			ImageIcon i3 = new ImageIcon("go button.png");
 			Image image3 = i3.getImage();
-			Image newIm3 = image3.getScaledInstance(200,40 , java.awt.Image.SCALE_SMOOTH);
+			Image newIm3 = image3.getScaledInstance(50,40 , java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi3 = new ImageIcon(newIm3);
 			
 			//goButton
 			JButton goButton = new JButton(newi3);
-			goButton.setPreferredSize(new Dimension(200,40));
-			goButton.setMaximumSize(new Dimension(200,40));
-		
+			goButton.setPreferredSize(new Dimension(50,40));
+		//	goButton.setMaximumSize(new Dimension(50,40));
+			goButton.setMinimumSize(new Dimension(50,40));
+
 			
 			//remove button
 			
-			ImageIcon i4 = new ImageIcon("remove button");
+			ImageIcon i4 = new ImageIcon("remove button.png");
 			Image image4 = i4.getImage();
 			Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi4 = new ImageIcon(newIm4);
 			
 			//removeButton
 			JButton removeButton = new JButton(newi4);
-			goButton.setPreferredSize(new Dimension(200,40));
-			goButton.setMinimumSize(new Dimension(200,40));
+			removeButton.setPreferredSize(new Dimension(200,40));
+			removeButton.setMinimumSize(new Dimension(200,40));
 			
 			//timeBox
-			 time.add(Box.createHorizontalStrut(10));
+			 time.add(Box.createHorizontalStrut(5));
 			 time.add(hours);
 			 time.add(Box.createHorizontalStrut(10));
 			 time.add(hoursText);
@@ -199,7 +205,7 @@ public class MainFrame extends JFrame
 			 
 			 
 			
-			 
+		//ActionListeners	 
 			 
 			 
 			 

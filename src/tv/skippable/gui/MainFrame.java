@@ -1,6 +1,8 @@
 package tv.skippable.gui;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -193,7 +195,28 @@ public class MainFrame extends JFrame {
 			 
 			 
 			
-		//ActionListeners	 
+		//ActionListeners
+			 
+			 //Add Shows
+			 
+			 addShow.addActionListener( new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						
+						AddShowWindow w = new AddShowWindow();
+						//w.setVisible(true);
+
+					
+						
+					}
+					
+				});
+			 
+			 
+			 
+			 
 			 
 			 
 			 

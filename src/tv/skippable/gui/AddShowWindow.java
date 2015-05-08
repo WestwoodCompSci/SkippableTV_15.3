@@ -77,6 +77,8 @@ public class AddShowWindow {
 		frame.setVisible(true);
 	}
 	
+	
+	
 	//TESTER: WILL BE REMOVED
 public static void main(String[] args)
 {

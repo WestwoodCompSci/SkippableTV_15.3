@@ -206,7 +206,7 @@ public class MainFrame extends JFrame {
 					{
 						
 						AddShowWindow w = new AddShowWindow();
-						//w.setVisible(true);
+						w.setVisible(true);
 
 					
 						

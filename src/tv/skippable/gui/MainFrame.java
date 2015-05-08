@@ -1,36 +1,28 @@
 package tv.skippable.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Image;
+import java.awt.*;
 
-import javax.swing.Box;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
-public class MainFrame extends JFrame
-
-{
-	public MainFrame()
-	{
+public class MainFrame extends JFrame {
+	public MainFrame() {
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setPreferredSize(new Dimension(800,500));
-		this.setLocation(350, 200);
+		this.setMinimumSize(this.getPreferredSize());
+		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		screenSize.width /= 2;
+		screenSize.height /= 2;
+
+		screenSize.width -= this.getPreferredSize().width / 2;
+		screenSize.height -= this.getPreferredSize().height / 2;
+		
+		this.setLocation(screenSize.width, screenSize.height);
 		
 		//vBox
 		Box vBox = Box.createVerticalBox();
-		
-		
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
 		this.setContentPane(frame);
@@ -62,13 +54,10 @@ public class MainFrame extends JFrame
 		
 		
 		//Menu Box
-		
 		JButton addShow = new JButton ("Add Show...");
-		addShow.setFont(new Font("Times Roman", Font.PLAIN, 20));
 		addShow.setPreferredSize(new Dimension(40,20));
 		
 		JButton myShows = new JButton ("My Shows...");
-		myShows.setFont(new Font("Times Roman", Font.PLAIN, 20));
 		addShow.setPreferredSize(new Dimension(40,20));
 		
 		menuBox.add(Box.createHorizontalStrut(5));
@@ -78,9 +67,8 @@ public class MainFrame extends JFrame
 		menuBox.add(Box.createHorizontalStrut(5));
 		
 		//showBox
-		
-		JLabel title = new JLabel ("Title of Show");
-		title.setFont(new Font("Times Roman", Font.BOLD, 40));
+		JLabel title = new JLabel("Title of Show");
+		title.setFont(title.getFont().deriveFont(40));
 		
 		String s = "Season 3" + ":" + "" + "2hrs 30 min";
 		
@@ -122,7 +110,9 @@ public class MainFrame extends JFrame
 		
 			
 		//episode Progress
+		JLabel question = new JLabel("What Episode?");
 		
+
 			JLabel question = new JLabel("What Episode?");
 			
 			
@@ -211,41 +201,9 @@ public class MainFrame extends JFrame
 			 
 			 
 			 
+
 			 
-			
-			
-		
-		
-		
-
-		
-		
-		
-	
-
-		
-	
-		
-		
 		this.pack();
-		this.setVisible(true);
-		
-		
-		
-	}
-		
-		
-		
-		
-		
-		
-		
-		
-			
-	
-	
-		
+		this.setVisible(true);	
+	}	
 }
-
-
-

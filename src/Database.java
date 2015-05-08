@@ -9,6 +9,7 @@ public class Database {
 //	data stems from list of users
 	
 	ArrayList<TVShow> showList;
+	ArrayList<Review> reviewList; //no idea what we're doing
 //	data stems from user inputs into show collection
 	
 	
@@ -16,6 +17,7 @@ public class Database {
 	{
 		userList = new ArrayList<User>();
 		showList = new ArrayList<TVShow>();
+		reviewList = new ArrayList<Review>();
 	}
 
 	public List<TVShow> getshowList()
@@ -28,6 +30,11 @@ public class Database {
 		return userList;
 	}
 	
+	public List<Review> getreviewList()
+	{
+		return reviewList;
+	}
+	
 	//public void addUser(User a)
 	//{
 	//	userList.add(a);
@@ -35,13 +42,22 @@ public class Database {
 	
 	public void sortListAlpha()
 	{
-		//implement method that will search through user list to alphabetically sort all users
+		for (int c = 0; c < userList.size(); c++) {
+		      for (int d = 0; d < userList.size() - c; d++) {
+		        if (userList.get(d).getUsername().compareTo(userList.get(d+1).getUsername()) < 0) /* For descending order use < */
+		        {
+		          User swap  = userList.get(d);
+		          userList.set(d, userList.get(d+1));
+		          userList.set(d+1,swap);
+		        }
+		      }
+		    }
 	}
 	
-	//public void deleteUser(User a)
-	//{
-	//	userList.remove(a);
-	//}
+	public void deleteUser(User a)
+	{
+		userList.remove(a);
+	}
 		
 	
 	public void addReview(Review r, Episode e)

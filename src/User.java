@@ -22,4 +22,9 @@ public class User {
 	{
 		return showList;
 	}
+	
+	public String getUsername()
+	{
+		return username;
+	}
 }

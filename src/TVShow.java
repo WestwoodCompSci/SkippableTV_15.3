@@ -11,7 +11,7 @@ public class TVShow {
 	{
 		name = n;
 		seasons = s;
-		setLength();
+		updateLength();
 		orderFixer(seasons);
 	}
 	
@@ -38,7 +38,7 @@ public class TVShow {
 	public void addSeason(Season s)
 	{
 		seasons.add(s.getSeasonNumber() - 1, s);
-		setLength();
+		updateLength();
 	}
 	
 	public void addSeasons(List<Season> ssns)
@@ -47,10 +47,10 @@ public class TVShow {
 		{
 			this.seasons.add(x.getSeasonNumber() - 1, x);
 		}
-		setLength();
+		updateLength();
 	}
 	
-	public void setLength()
+	public void updateLength()
 	{
 		int total = 0;
 		for (int i = 0; i < seasons.size(); i++)

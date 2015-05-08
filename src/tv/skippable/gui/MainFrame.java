@@ -89,8 +89,16 @@ public class MainFrame extends JFrame {
 		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi2 = new ImageIcon(newIm2);
 		
-		JButton arrow1 = new JButton(newi1);
-		//arrow1.setPreferredSize(new Dimension(40,40));
+		JButton arrow1 = new JButton() {
+			public void paint(Graphics g){
+				g.drawImage(image, 0,0, 40, 40,null);
+			}
+		};
+		arrow1.setContentAreaFilled(false);
+		arrow1.setRolloverEnabled(false);
+		arrow1.setMinimumSize(new Dimension(40,40));
+		arrow1.setPreferredSize(new Dimension(40,40));
+		arrow1.setMaximumSize(new Dimension(40,40));
 		
 		JButton arrow2 = new JButton(newi2);
 		

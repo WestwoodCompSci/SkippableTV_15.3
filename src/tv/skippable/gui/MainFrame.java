@@ -246,6 +246,22 @@ public class MainFrame extends JFrame {
 					
 				});
 			 
+			 myShows.addActionListener( new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						
+						MyShowsWindow p = new MyShowsWindow();
+						p.setVisible(true);
+
+					
+						
+					}
+					
+				});
+			 
+			 
 			 
 			 
 			 
@@ -259,4 +275,6 @@ public class MainFrame extends JFrame {
 		this.pack();
 		this.setVisible(true);	
 	}	
+	
+	
 }

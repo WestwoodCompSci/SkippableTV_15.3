@@ -22,6 +22,7 @@ public class ChosenEpisodes extends JFrame
 			JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 				
 			this.setContentPane(frame);
+	
 				
 				
 		

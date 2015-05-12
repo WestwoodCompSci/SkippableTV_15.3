@@ -3,11 +3,13 @@ package tv.skippable.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
 	public MainFrame() {
+		
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -23,6 +25,7 @@ public class MainFrame extends JFrame {
 		
 		this.setLocation(screenSize.width, screenSize.height);
 		
+		//this.addAllShowsGUI(); <--need it to add all the shows...i think.
 		//vBox
 		Box vBox = Box.createVerticalBox();
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -267,7 +270,7 @@ public class MainFrame extends JFrame {
 			 
 			 
 			 
-			 
+		 
 			 
 			 
 
@@ -276,5 +279,22 @@ public class MainFrame extends JFrame {
 		this.setVisible(true);	
 	}	
 	
+	public JFrame getFrame(){return this;}
 	
+	/*
+	public void addShowGUI(TVShow show)
+	{
+		 show.getName();
+		 
+		
+	}
+	*/
+	
+	public void addAllShowsGUI(ArrayList allShows)
+	{
+		for (int i=0; i<allShows.size()-1; i++)
+		{
+			//addShowGUI(allShows.get(i));
+		}
+	}
 }

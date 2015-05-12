@@ -231,6 +231,21 @@ public class MainFrame extends JFrame {
 					
 				});
 			 
+			 goButton.addActionListener( new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						
+						ChosenEpisodes p = new ChosenEpisodes();
+						p.setVisible(true);
+
+					
+						
+					}
+					
+				});
+			 
 			 
 			 
 			 

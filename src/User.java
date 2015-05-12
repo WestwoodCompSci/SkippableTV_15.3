@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,6 +12,7 @@ public class User {
 	{
 		username = user;
 		password = pass;
+		showList = new ArrayList<TVShow>();
 	}
 	
 	public void addShow(TVShow show)

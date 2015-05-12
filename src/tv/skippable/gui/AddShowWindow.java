@@ -24,7 +24,7 @@ public class AddShowWindow extends JFrame
 		//and also an "add show" and "cancel" button. idk what i'm doing.
 		
 		this.setTitle("Add Show");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setPreferredSize(new Dimension(600, 400));
 		this.setLocation(400, 200);
 		Box mainBox = Box.createVerticalBox();

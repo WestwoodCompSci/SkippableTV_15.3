@@ -10,14 +10,14 @@ import javax.swing.*;
 public class SkippableTVGUIMain {
 	public static void main(String[] args) {
 		// Set the look and feel
-		/*
+		
 		try {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException | UnsupportedLookAndFeelException e) {
 			e.printStackTrace(); 
 		}
-		//*/
+		
 		
 		// check if logged in? idk
 		

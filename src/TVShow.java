@@ -63,5 +63,28 @@ public class TVShow {
 		return length;
 	}
 	
+	public List<Episode> bestEpsRating(double minRating)
+	{
+		List<Episode> goodEps = episodes;
+		for (Episode x : goodEps)
+		{
+			if (x.getRating() < minRating)
+				goodEps.remove(x);
+		}
+		
+		return goodEps;
+	}
 	
+	public List<Episode> bestEpsTime(int minutes)
+	{
+		List<Episode> showEps = episodes;
+		List<Episode> goodEps = new ArrayList<Episode>();
+		rateSort(showEps);
+		int time = 0;
+		for (int i = 0; i < goodEps.size(); i++)
+		{
+			time += show
+		}
+		return null;
+	}
 }

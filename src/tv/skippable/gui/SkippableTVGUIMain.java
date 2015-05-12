@@ -15,7 +15,7 @@ public class SkippableTVGUIMain {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException | UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 		//*/
 		

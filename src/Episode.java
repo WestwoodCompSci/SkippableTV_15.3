@@ -5,15 +5,15 @@ public class Episode {
 
 	private String name;
 	private int length;		//in minutes
-	private int episodeNumber;
+	private int episodeNumber;	//last two digits are episode numbers, everything before
 	private List<Review> reviews;
 	
-	public Episode(String n, int number, int time, List<Review> r)
+	public Episode(String name, int episodeNumber, int length, List<Review> reviews)
 	{
-		name = n;
-		length = time;
-		reviews = r;
-		episodeNumber = number;
+		this.name = name;
+		this.length =  length;
+		this.reviews = reviews;
+		this.episodeNumber = episodeNumber;
 	}
 	
 	public int getEpisodeNumber()

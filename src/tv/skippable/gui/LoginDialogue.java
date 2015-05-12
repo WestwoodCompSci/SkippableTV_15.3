@@ -110,6 +110,22 @@ public class LoginDialogue extends JDialog {
 		// Add everything
 		content.add(buttons, BorderLayout.SOUTH);
 		getContentPane().add(content);
+		
+		
+		register.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				RegisterDialogue w = new RegisterDialogue();
+				w.setVisible(true);
+
+			
+				
+			}
+			
+		});
 	}	
 	
 	

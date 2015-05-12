@@ -14,20 +14,21 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 
-public class AddShowWindow {
+public class AddShowWindow extends JFrame
+{
 	
-	public AddShowWindow()
+	public AddShowWindow() 
 	{
 		//The window consists of a horizontal box with half of it containing a Scroll Pane of shows
 		//and the other half contains a vertical box with components that change when you select a show
 		//and also an "add show" and "cancel" button. idk what i'm doing.
 		
-		final JFrame frame = new JFrame("Add Show");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(600, 400));
-		frame.setLocation(400, 200);
+		this.setTitle("Add Show");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setPreferredSize(new Dimension(600, 400));
+		this.setLocation(400, 200);
 		Box mainBox = Box.createVerticalBox();
-		frame.add(mainBox);
+		this.add(mainBox);
 		Box hBox = Box.createHorizontalBox();
 		mainBox.add(Box.createVerticalStrut(5));
 		mainBox.add(hBox);
@@ -72,10 +73,26 @@ public class AddShowWindow {
 		});
 		
 		
+		cancelButton.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				dispose();
+			
+				
+			}
+			
+		});
+		
+		
 	
-		frame.pack();
-		frame.setVisible(true);
+		this.pack();
+		this.setVisible(true);
 	}
+	
+	
 	
 	//TESTER: WILL BE REMOVED
 public static void main(String[] args)

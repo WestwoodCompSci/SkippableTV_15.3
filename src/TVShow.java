@@ -10,9 +10,15 @@ public class TVShow {
 	public TVShow(String n, List <Episode> eps)
 	{
 		name = n;
+<<<<<<< HEAD
 		episodes = eps;
 		setLength();
 		orderFixer(episodes);
+=======
+		seasons = s;
+		updateLength();
+		orderFixer(seasons);
+>>>>>>> 9cb715699abcf11c834db3572df2a4ad8ba101d1
 	}
 	
 	private List<Episode> orderFixer(List<Episode> preCheck)
@@ -37,9 +43,14 @@ public class TVShow {
 	
 	public void addEpisode(Episode ep)
 	{
+<<<<<<< HEAD
 		episodes.add(ep);
 		setLength();
 		orderFixer(episodes);
+=======
+		seasons.add(s.getSeasonNumber() - 1, s);
+		updateLength();
+>>>>>>> 9cb715699abcf11c834db3572df2a4ad8ba101d1
 	}
 	
 	public void addEpisodes(List<Episode> eps)
@@ -48,10 +59,10 @@ public class TVShow {
 		{
 			this.addEpisode(x);
 		}
-		setLength();
+		updateLength();
 	}
 	
-	public void setLength()
+	public void updateLength()
 	{
 		int total = 0;
 		for (int i = 0; i < episodes.size(); i++)

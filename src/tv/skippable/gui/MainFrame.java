@@ -70,7 +70,8 @@ public class MainFrame extends JFrame {
 		
 		//showBox
 		JLabel title = new JLabel("Title of Show");
-		title.setFont(title.getFont().deriveFont(40));
+		title.setFont(new Font("Times Roman", Font.BOLD, 20));
+		//title.setFont(title.getFont().deriveFont(40));
 		
 		String s = "Season 3" + ":" + "" + "2hrs 30 min";
 		
@@ -145,7 +146,7 @@ public class MainFrame extends JFrame {
 		//labelTime Box
 			
 			JLabel question2 = new JLabel("How much time do I have?");
-			question2.setFont(new Font("Times Roman", Font.BOLD, 20));
+			question2.setFont(new Font("Times Roman", Font.BOLD, 15));
 			
 			labelTime.add(Box.createHorizontalStrut(10));
 			labelTime.add(question2);

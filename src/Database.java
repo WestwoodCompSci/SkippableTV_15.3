@@ -75,8 +75,8 @@ public class Database {
 	public static void main (String[] args)
 	{
 		Database thisOne = new Database();
-		TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Season>());
-		thisOne.getshowList().add(House_of_Cards);
+		/*TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Season>());
+		thisOne.getshowList().add(House_of_Cards);*/
 		User user1 = new User("dankLord69" , "420alldayeveryday");
 		userList.add(user1);
 		

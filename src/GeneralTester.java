@@ -46,7 +46,7 @@ public class GeneralTester {
 		someShowSeasons.add(someShowS1);
 		someShowSeasons.add(someShowS2);
 		
-		TVShow someShow=new TVShow("Some Show",someShowSeasons);
+		//TVShow someShow=new TVShow("Some Show",someShowSeasons);
 		
 		
 		

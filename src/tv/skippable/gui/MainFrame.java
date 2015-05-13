@@ -3,11 +3,13 @@ package tv.skippable.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
 	public MainFrame() {
+		
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -23,6 +25,7 @@ public class MainFrame extends JFrame {
 		
 		this.setLocation(screenSize.width, screenSize.height);
 		
+		//this.addAllShowsGUI(); <--need it to add all the shows...i think.
 		//vBox
 		Box vBox = Box.createVerticalBox();
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -70,7 +73,8 @@ public class MainFrame extends JFrame {
 		
 		//showBox
 		JLabel title = new JLabel("Title of Show");
-		title.setFont(title.getFont().deriveFont(40));
+		title.setFont(new Font("Times Roman", Font.BOLD, 20));
+		//title.setFont(title.getFont().deriveFont(40));
 		
 		String s = "Season 3" + ":" + "" + "2hrs 30 min";
 		
@@ -145,7 +149,7 @@ public class MainFrame extends JFrame {
 		//labelTime Box
 			
 			JLabel question2 = new JLabel("How much time do I have?");
-			question2.setFont(new Font("Times Roman", Font.BOLD, 20));
+			question2.setFont(new Font("Times Roman", Font.BOLD, 15));
 			
 			labelTime.add(Box.createHorizontalStrut(10));
 			labelTime.add(question2);
@@ -230,12 +234,43 @@ public class MainFrame extends JFrame {
 					
 				});
 			 
+			 goButton.addActionListener( new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						
+						ChosenEpisodes p = new ChosenEpisodes();
+						p.setVisible(true);
+
+					
+						
+					}
+					
+				});
+			 
+			 myShows.addActionListener( new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						
+						MyShowsWindow p = new MyShowsWindow();
+						p.setVisible(true);
+
+					
+						
+					}
+					
+				});
 			 
 			 
 			 
 			 
 			 
 			 
+			 
+		 
 			 
 			 
 
@@ -243,4 +278,23 @@ public class MainFrame extends JFrame {
 		this.pack();
 		this.setVisible(true);	
 	}	
+	
+	public JFrame getFrame(){return this;}
+	
+	/*
+	public void addShowGUI(TVShow show)
+	{
+		 show.getName();
+		 
+		
+	}
+	*/
+	
+	public void addAllShowsGUI(ArrayList allShows)
+	{
+		for (int i=0; i<allShows.size()-1; i++)
+		{
+			//addShowGUI(allShows.get(i));
+		}
+	}
 }

@@ -25,6 +25,10 @@ public class GeneralTester {
 		someShowReviews.add(new Review(1,"it sucks it's just like game of thrones"));
 		someShowReviews.add(new Review(5,"it's awesome it reminds me of game of thrones"));
 		
+		ArrayList<Review> someShowReviews2=new ArrayList<Review>();
+		someShowReviews2.add(new Review(1,"even worse than season 1"));
+		someShowReviews2.add(new Review(5, "even better than season 1"));
+		
 		
 		ArrayList<Episode> someShowS1Eps = new ArrayList<Episode>();
 		int i=1;
@@ -35,7 +39,7 @@ public class GeneralTester {
 		ArrayList<Episode> someShowS2Eps = new ArrayList<Episode>();
 		int itwo=1;
 		while(itwo<14){
-			someShowS1Eps.add(new Episode("EpisodeS1E"+itwo, itwo, 24, someShowReviews));
+			someShowS2Eps.add(new Episode("EpisodeS2E"+itwo, itwo, 24, someShowReviews2));
 			itwo++;
 		}
 		
@@ -47,6 +51,17 @@ public class GeneralTester {
 		someShowSeasons.add(someShowS2);
 		
 		//TVShow someShow=new TVShow("Some Show",someShowSeasons);
+		
+		User someUser=new User("Some User","passwords");
+		
+		
+		
+		//printing to test
+		
+		System.out.println(someShow.getName());
+		System.out.println(someShow.getSeasons());
+		System.out.println(someShow.getLength());
+		System.out.println(someShow.getSeasons().get(0).getEpisodes().get(4).getEpisodeNumber());
 		
 		
 		

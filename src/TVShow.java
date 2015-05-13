@@ -47,12 +47,12 @@ public class TVShow {
 		for(int i = 0; i < toSort.length; i++) {
 			toSort[i] = episodes.get(i);
 		}
+		
 		Episode[] sorted = sorter.quickSort(toSort);
-		List<Episode> finalList = new ArrayList<Episode>();
+		episodes.clear();
 		for (Episode x : sorted) {
-			finalList.add(x);
+			episodes.add(x);
 		}
-		episodes = finalList;
 	}
 	
 	public void addEpisodes(List<Episode> eps)
@@ -108,7 +108,7 @@ public class TVShow {
 		private Episode[] quickSort(Episode[] stuff)
 		{
 			if(stuff == null || stuff.length == 0)
-				return;
+				return null;
 			episodes = stuff;
 			length = stuff.length;
 			sortHelper(0, length - 1);

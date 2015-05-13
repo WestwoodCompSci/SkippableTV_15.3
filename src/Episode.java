@@ -1,7 +1,7 @@
 import java.util.List;
 
 
-public class Episode {
+public class Episode{
 
 	private String name;
 	private int length;		//in minutes
@@ -43,5 +43,14 @@ public class Episode {
 			total += reviews.get(i).getScore();
 		double average = (double)total;
 		return average / reviews.size();
+	}
+	
+	public int compareTo(Episode other)
+	{
+		if (other.getEpisodeNumber() > getEpisodeNumber())
+			return -1;
+		if (other.getEpisodeNumber() < getEpisodeNumber())
+			return 1;
+		return 0;
 	}
 }

@@ -1,4 +1,4 @@
-package tv.skippable.gui;
+ package tv.skippable.gui;
 
 import javax.swing.*;
 import javax.swing.plaf.metal.*;

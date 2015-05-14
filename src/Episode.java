@@ -8,12 +8,12 @@ public class Episode{
 	private int episodeNumber;	//last two digits are episode numbers, everything before
 	private List<Review> reviews;
 	
-	public Episode(String name, int episodeNumber, int length, List<Review> reviews)
+	public Episode(String name, int episode, int season, int length, List<Review> reviews)
 	{
 		this.name = name;
 		this.length =  length;
 		this.reviews = reviews;
-		this.episodeNumber = episodeNumber;
+		episodeNumber = season * 100 + episode;
 	}
 	
 	public int getEpisodeNumber()

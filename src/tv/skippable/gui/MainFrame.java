@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
 		
 		this.setLocation(screenSize.width, screenSize.height);
 		
-		//this.addAllShowsGUI(); <--need it to add all the shows...i think.
+		//this.addAllShowsGUI(); <--need it to add all the shows...i think...like a load function?
 		//vBox
 		Box vBox = Box.createVerticalBox();
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

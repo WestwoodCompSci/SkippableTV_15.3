@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.plaf.metal.*;
 
 public class MyShowsWindow extends JFrame 
@@ -37,20 +39,24 @@ public class MyShowsWindow extends JFrame
 			
 			
 			//once we make a selection
-		/*	myShows.addActionListener(new ActionListener()
+			list.addListSelectionListener(new ListSelectionListener()
 			{
 
 				@Override
-				public void actionPerformed(ActionEvent e) {
+				public void valueChanged(ListSelectionEvent arg0) {
+					// TODO Auto-generated method stub
 					
-					//store their choice and implement into main frame
+					//store what we selected to be implemented on Main Frame
 					
+					Object s = list.getSelectedValue();
 					dispose();
 				}
+
 				
 				
 				
-			});*/
+				
+			});
 		
 		
 		

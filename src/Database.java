@@ -78,7 +78,14 @@ public class Database {
 		/*TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Season>());
 		thisOne.getshowList().add(House_of_Cards);*/
 		User user1 = new User("dankLord69" , "420alldayeveryday");
+		User user2 = new User("dankmemecreatorbydowneyultrasoft" , "password");
+		User user3 = new User("North Korea", "Best Korea");
+		User user4 = new User("Riley Taylor", "youtube tutorial legend");
 		userList.add(user1);
+		userList.add(user2);
+		userList.add(user3);
+		userList.add(user4);
+		
 		
 	}
 		

@@ -5,7 +5,7 @@ import java.util.List;
 public class TVShow {
 
 	private String name;
-	private List <Episode> episodes;
+	private List<Episode> episodes;
 	private int length; //in minutes
 	
 	public TVShow(String n, List <Episode> eps)
@@ -31,9 +31,51 @@ public class TVShow {
 		return length;
 	}
 	
-	public void addEpisode(Episode ep)
+	public TVShow bestByRating(double minRating)
 	{
-		episodes.add(ep);
+		rateSort();
+		TVShow toWatch = new TVShow(getName(), new ArrayList<Episode>());
+		List<Episode> tempEpisodes = getEpisodes();
+		int index = 0;
+		for (int i = 0; i < tempEpisodes.size(); i++) {
+			if (tempEpisodes.get(i).getRating() < minRating) {
+				index = i;
+			}
+		}
+		tempEpisodes.subList(index, tempEpisodes.size() -1);
+		toWatch.addEpisodes(tempEpisodes);
+		toWatch.epSort();
+		return toWatch;
+	}
+	
+	public TVShow bestByTime(int minutes)
+	{
+		rateSort();
+		TVShow toWatch = new TVShow(getName(), new ArrayList<Episode>());
+		
+		for(int i = episodes.size() - 1; i >= 0; i--) {
+			if (toWatch.getLength() + episodes.get(i).getLength() > minutes) {
+				break;
+			}
+			toWatch.addEpisode(episodes.get(i));
+		}
+		toWatch.epSort();
+		return toWatch;
+	}
+	
+	public void addEpisode(Episode toAdd)
+	{
+		episodes.add(toAdd);
+		updateLength();
+		epSort();
+	}
+	
+	public void addEpisodes(List<Episode> toAdd)
+	{
+		for(Episode x : toAdd)
+		{
+			this.addEpisode(x);
+		}
 		updateLength();
 		epSort();
 	}
@@ -68,16 +110,6 @@ public class TVShow {
 		}
 	}
 	
-	public void addEpisodes(List<Episode> eps)
-	{
-		for(Episode x : eps)
-		{
-			this.addEpisode(x);
-		}
-		updateLength();
-		epSort();
-	}
-	
 	public void updateLength()
 	{
 		int total = 0;
@@ -87,32 +119,6 @@ public class TVShow {
 		}
 		
 		length = total;
-	}
-	
-	public List<Episode> bestEpsRating(double minRating)
-	{
-		List<Episode> goodEps = episodes;
-		for (Episode x : goodEps)
-		{
-			if (x.getRating() < minRating)
-				goodEps.remove(x);
-		}
-		
-		return goodEps;
-	}
-	
-	public List<Episode> bestEpsTime(int minutes)
-	{
-		List<Episode> showEps = episodes;
-		List<Episode> goodEps = new ArrayList<Episode>();
-		
-		rateSort();
-		int time = 0;
-		for (int i = 0; i < goodEps.size(); i++)
-		{
-	//		time += show
-		}
-		return null;
 	}
 	
 	private class QuickSort {

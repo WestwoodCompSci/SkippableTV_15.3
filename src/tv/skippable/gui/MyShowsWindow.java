@@ -49,7 +49,7 @@ public class MyShowsWindow extends JFrame
 					//store what we selected to be implemented on Main Frame
 					
 					
-					dispose();
+					//dispose();
 				}
 
 				

@@ -48,7 +48,7 @@ public class MyShowsWindow extends JFrame
 					
 					//store what we selected to be implemented on Main Frame
 					
-					Object s = list.getSelectedValue();
+					
 					dispose();
 				}
 

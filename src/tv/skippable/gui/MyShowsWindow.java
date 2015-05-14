@@ -4,11 +4,8 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Box;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+import javax.swing.plaf.metal.*;
 
 public class MyShowsWindow extends JFrame 
 {
@@ -24,17 +21,23 @@ public class MyShowsWindow extends JFrame
 			JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 				
 			this.setContentPane(frame);
-				
-			JComboBox myShows = new JComboBox();
-			vBox.add(myShows);
 			
-			//test action listener
-				String s = "hello";
-				myShows.addItem(s);
+			String[] potato = {
+					"test 1", "yolo the obamacare",
+					"nein pls"
+			};
+				
+			JList list = new JList(potato); //data has type Object[]
+			list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+			list.setLayoutOrientation(JList.VERTICAL);
+			list.setVisibleRowCount(-1);
+			
+			JScrollPane listScroller = new JScrollPane(list);
+			vBox.add(listScroller);
 			
 			
 			//once we make a selection
-			myShows.addActionListener(new ActionListener()
+		/*	myShows.addActionListener(new ActionListener()
 			{
 
 				@Override
@@ -47,7 +50,7 @@ public class MyShowsWindow extends JFrame
 				
 				
 				
-			});
+			});*/
 		
 		
 		
@@ -58,6 +61,15 @@ public class MyShowsWindow extends JFrame
 	
 	public static void main(String[] args)
 	{
+		
+		try {
+			DefaultMetalTheme t = new DefaultMetalTheme();
+			MetalLookAndFeel.setCurrentTheme(t);
+			UIManager.setLookAndFeel(new MetalLookAndFeel());
+		} catch (UnsupportedLookAndFeelException e) {
+			e.printStackTrace(); 
+		}
+		
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override

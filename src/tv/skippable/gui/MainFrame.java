@@ -86,33 +86,20 @@ public class MainFrame extends JFrame {
 		Image newIm = image.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi1 = new ImageIcon(newIm);
 		
-		
-		
 		ImageIcon i2 = new ImageIcon("right arrow.png");
 		Image image2 = i2.getImage();
 		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi2 = new ImageIcon(newIm2);
 		
 		JButton arrow1 = new JButton(newi1); 
-		
-		/*
-		{
-			public void paint(Graphics g){
-				g.drawImage(image, 0,0, 40, 40,null);
-			}
-		};
-		
-		*/
-		
-		arrow1.setContentAreaFilled(false);
-		arrow1.setRolloverEnabled(false);
 		arrow1.setMinimumSize(new Dimension(40,40));
 		arrow1.setPreferredSize(new Dimension(40,40));
 		arrow1.setMaximumSize(new Dimension(40,40));
 		
-		
-		
 		JButton arrow2 = new JButton(newi2);
+		arrow2.setMinimumSize(new Dimension(40,40));
+		arrow2.setPreferredSize(new Dimension(40,40));
+		arrow2.setMaximumSize(new Dimension(40,40));
 		
 		
 		showBox.add(Box.createHorizontalStrut(10));
@@ -120,8 +107,9 @@ public class MainFrame extends JFrame {
 		showBox.add(Box.createHorizontalStrut(50));
 		showBox.add(seasonNum);
 		showBox.add(Box.createHorizontalStrut(1));
+		
 		showBox.add(arrow1);
-		showBox.add(Box.createHorizontalStrut(15));
+		showBox.add(Box.createHorizontalStrut(5));
 		showBox.add(seasonPro);
 		showBox.add(Box.createHorizontalStrut(5));
 		showBox.add(arrow2);

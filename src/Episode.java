@@ -45,11 +45,20 @@ public class Episode{
 		return average / reviews.size();
 	}
 	
-	public int compareTo(Episode other)
+	public int epCompare(Episode other)
 	{
 		if (other.getEpisodeNumber() > getEpisodeNumber())
 			return -1;
 		if (other.getEpisodeNumber() < getEpisodeNumber())
+			return 1;
+		return 0;
+	}
+	
+	public int rateCompare(Episode other)
+	{
+		if (other.getRating() > getRating())
+			return -1;
+		if (other.getRating() < getRating())
 			return 1;
 		return 0;
 	}

@@ -1,5 +1,7 @@
 //import java.util.ArrayList;
 
+import java.util.ArrayList;
+
 import tv.skippable.gui.SkippableTVGUIMain;
 
 
@@ -33,24 +35,18 @@ public class GeneralTester {
 		ArrayList<Episode> someShowS1Eps = new ArrayList<Episode>();
 		int i=1;
 		while(i<14){
-			someShowS1Eps.add(new Episode("EpisodeS1E"+i, i, 24, someShowReviews));
+			someShowS1Eps.add(new Episode("Episodetitle"+i,1, i, 24, someShowReviews));
 			i++;
 		}
 		ArrayList<Episode> someShowS2Eps = new ArrayList<Episode>();
 		int itwo=1;
 		while(itwo<14){
-			someShowS2Eps.add(new Episode("EpisodeS2E"+itwo, itwo, 24, someShowReviews2));
+			someShowS2Eps.add(new Episode("Episodetitle"+itwo,2, itwo, 24, someShowReviews2));
 			itwo++;
 		}
 		
-		Season someShowS1=new Season("Some Show", 1, someShowS1Eps);
-		Season someShowS2=new Season("Some Show",2,someShowS2Eps);
-		
-		ArrayList<Season> someShowSeasons=new ArrayList<Season>();
-		someShowSeasons.add(someShowS1);
-		someShowSeasons.add(someShowS2);
-		
-		//TVShow someShow=new TVShow("Some Show",someShowSeasons);
+	
+		TVShow someShow=new TVShow("Some Show",someShowS1Eps);
 		
 		User someUser=new User("Some User","passwords");
 		
@@ -59,9 +55,9 @@ public class GeneralTester {
 		//printing to test
 		
 		System.out.println(someShow.getName());
-		System.out.println(someShow.getSeasons());
+	//	System.out.println(someShow.getSeasons());
 		System.out.println(someShow.getLength());
-		System.out.println(someShow.getSeasons().get(0).getEpisodes().get(4).getEpisodeNumber());
+	//	System.out.println(someShow.getSeasons().get(0).getEpisodes().get(4).getEpisodeNumber());
 		
 		
 		

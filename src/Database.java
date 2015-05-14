@@ -74,8 +74,18 @@ public class Database {
 	public void save(List<User> a)	//writing data to text document?
 	{
 		JSONArray list = new JSONArray();
+
+		for (int i = 0; i < a.size(); i++)
+		{
+			list.add(a.get(i));
+		}
+		
+		//to be implemented later
+		
 		
 	}
+	
+	
 	
 	public void getUser(User a)	//based off formatting of text file or maybe based off formatting of array list
 	{
@@ -90,7 +100,7 @@ public class Database {
 	
 	public static void main (String[] args)
 	{
-		Database thisOne = new Database();
+		//Database thisOne = new Database();
 		/*TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Season>());
 		thisOne.getshowList().add(House_of_Cards);*/
 		//User user1 = new User("dankLord69" , "420alldayeveryday");

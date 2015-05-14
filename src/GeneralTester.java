@@ -37,21 +37,20 @@ public class GeneralTester {
 		someShowReviews2.add(new Review(5, "even better than season 1"));
 		
 		
-		ArrayList<Episode> someShowS1Eps = new ArrayList<Episode>();
+		ArrayList<Episode> someShowEps = new ArrayList<Episode>();
 		int i=1;
 		while(i<14){
-			someShowS1Eps.add(new Episode("Episodetitle"+i,1, i, 24, someShowReviews));
+			someShowEps.add(new Episode("Episodetitle"+i,1, i, 24, someShowReviews));
 			i++;
 		}
-		ArrayList<Episode> someShowS2Eps = new ArrayList<Episode>();
 		int itwo=1;
 		while(itwo<14){
-			someShowS2Eps.add(new Episode("Episodetitle"+itwo,2, itwo, 24, someShowReviews2));
+			someShowEps.add(new Episode("Episodetitle"+itwo,2, itwo, 24, someShowReviews2));
 			itwo++;
 		}
 		
 	
-		TVShow someShow=new TVShow("Some Show",someShowS1Eps);
+		TVShow someShow=new TVShow("Some Show",someShowEps);
 		
 		User someUser=new User("Some User","passwords");
 		
@@ -60,9 +59,8 @@ public class GeneralTester {
 		//printing to test
 		
 		System.out.println(someShow.getName());
-	//	System.out.println(someShow.getSeasons());
 		System.out.println(someShow.getLength());
-	//	System.out.println(someShow.getSeasons().get(0).getEpisodes().get(4).getEpisodeNumber());
+		System.out.println(someShow.getEpisodes().get(0).getName());
 		
 		
 		
@@ -80,4 +78,4 @@ public class GeneralTester {
 
 	}
 
-}
+	}

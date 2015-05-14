@@ -37,6 +37,7 @@ public class MainFrame extends JFrame {
 		
 		//More Boxes
 		Box menuBox = Box.createHorizontalBox();
+		Box lineBox = Box.createHorizontalBox();
 		Box showBox = Box.createHorizontalBox();
 		Box episodes = Box.createHorizontalBox();
 		Box episodeProgress = Box.createHorizontalBox();
@@ -70,6 +71,9 @@ public class MainFrame extends JFrame {
 		menuBox.add(Box.createHorizontalStrut(50));
 		menuBox.add(myShows);
 		menuBox.add(Box.createHorizontalStrut(5));
+		
+		
+		
 		
 		//showBox
 		JLabel title = new JLabel("Title of Show");
@@ -121,7 +125,8 @@ public class MainFrame extends JFrame {
 			
 		//episode Progress
 
-			JLabel question = new JLabel("What Episode?");
+			JLabel question = new JLabel("What Episode Are You On?");
+			question.setFont(new Font("Times Roman", Font.BOLD, 15));
 			
 			
 			JComboBox episodeList = new JComboBox ();

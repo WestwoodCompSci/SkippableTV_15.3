@@ -65,7 +65,7 @@ public class Database {
 		e.getReviews().add(r);
 	}
 	
-	public void saveUser(User a)
+	public void saveUser(User a)	//writing data to text document 
 	{
 		JSONObject b = new JSONObject();
 		

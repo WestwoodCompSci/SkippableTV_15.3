@@ -1,3 +1,4 @@
+package tv.skippable.backend;
 
 public class Review {
 

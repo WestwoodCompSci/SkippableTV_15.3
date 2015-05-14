@@ -1,6 +1,12 @@
 
 import java.util.*;
+
 import org.json.simple.*;
+
+import tv.skippable.backend.Episode;
+import tv.skippable.backend.Review;
+import tv.skippable.backend.TVShow;
+import tv.skippable.backend.User;
 
 
 public class Database {

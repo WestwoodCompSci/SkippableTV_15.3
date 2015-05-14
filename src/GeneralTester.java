@@ -2,6 +2,10 @@
 
 import java.util.ArrayList;
 
+import tv.skippable.backend.Episode;
+import tv.skippable.backend.Review;
+import tv.skippable.backend.TVShow;
+import tv.skippable.backend.User;
 import tv.skippable.gui.SkippableTVGUIMain;
 
 

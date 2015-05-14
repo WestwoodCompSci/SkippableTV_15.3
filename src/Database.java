@@ -65,14 +65,13 @@ public class Database {
 		e.getReviews().add(r);
 	}
 	
-	public void saveUser(User a)	//writing data to text document 
+	public void save(List<User> a)	//writing data to text document?
 	{
-		JSONObject b = new JSONObject();
-		
+		JSONArray list = new JSONArray();
 		
 	}
 	
-	public void getUser(User a)
+	public void getUser(User a)	//based off formatting of text file or maybe based off formatting of array list
 	{
 		
 	}

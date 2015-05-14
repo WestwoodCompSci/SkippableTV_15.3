@@ -1,11 +1,6 @@
 Database Text Document
 
-username
-password
-show list (marked by tabs)
-reviews
-episodes for show list
-
+username password showlist (each element in show list displays reviews/rating)
 
 username2
 password

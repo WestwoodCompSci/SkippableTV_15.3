@@ -1,3 +1,4 @@
+package tv.skippable.encryption;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -24,7 +25,6 @@ public class Encryption {
 	}
 	public static String decrypt(String DATA) throws Exception
 	{
-		System.out.println(DATA.length());
 		Cipher c = Cipher.getInstance(ALGO);
 		byte[] decryptedValue = new BASE64Decoder().decodeBuffer(encryptedValue);
 		c.init(Cipher.DECRYPT_MODE, key);

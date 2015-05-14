@@ -8,8 +8,6 @@ public class TVShow {
 	private List <Episode> episodes;
 	private int length; //in minutes
 	
-	
-	
 	public TVShow(String n, List <Episode> eps)
 	{
 		name = n;
@@ -107,11 +105,12 @@ public class TVShow {
 	{
 		List<Episode> showEps = episodes;
 		List<Episode> goodEps = new ArrayList<Episode>();
-		rateSort(showEps);
+		
+		rateSort();
 		int time = 0;
 		for (int i = 0; i < goodEps.size(); i++)
 		{
-			time += show
+	//		time += show
 		}
 		return null;
 	}

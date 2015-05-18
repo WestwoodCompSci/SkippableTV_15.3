@@ -83,14 +83,29 @@ public class Database {
 		
 		for (int i = 0; i < a.size(); i++)
 		{
-			list.add(a.get(i));
+			JSONObject alpha = new JSONObject();
+			alpha.put("username", a.get(i).getUsername());
+			alpha.put("password", a.get(i).getPassword());
+			
+			JSONArray betalist = new JSONArray();
+			for (int j = 0 ; j < a.get(i).getShows().size(); j++)
+			{
+				betalist.add(a.get(i).getShows().get(j));
+			}
+			
+			alpha.put("user show list", betalist);
+			
+			list.add(alpha);
 		}
+		
 		
 		obj.put("User list", list);
 		
 		try {
 			FileWriter file = new FileWriter("H:/Comp. Sci SL/CompSciSL_Workspace/SkippableTV_15.3/src/Database Text Document");
 			file.write(obj.toJSONString());
+			file.flush();
+			file.close();
 			}
 		catch (IOException e)
 			{
@@ -101,7 +116,7 @@ public class Database {
 			file.flush();
 			file.close();
 			}*/
-	
+		System.out.print(obj);
 	
 	
 	}
@@ -115,10 +130,9 @@ public class Database {
 		
 	//ADD JSON METHODS TO ADD STUFF TO THE DATABASE TEXT DOCUMENT TO WRITE DATA FROM LISTS TO FILE
 	
-	//                  http://www.json.org/            <--json.org = muy bueno
+	//                  http://www.json.org/            
 	
-	//					https://code.google.com/p/json-simple/wiki/EncodingExamples			<-- json library api
-	
+	//					https://code.google.com/p/json-simple/wiki/EncodingExamples			
 	public static void main (String[] args) 
 	{
 		Database thisOne = new Database();

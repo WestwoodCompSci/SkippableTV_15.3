@@ -27,7 +27,7 @@ public class MainFrame extends JFrame {
 		
 		this.setLocation(screenSize.width, screenSize.height);
 		
-		//this.addAllShowsGUI(); <--need it to add all the shows...i think...like a load function?
+		
 		//vBox
 		Box vBox = Box.createVerticalBox();
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -312,6 +312,11 @@ public class MainFrame extends JFrame {
 		//get season
 		
 		//# episode per season
+		for(int i =0; i<show.getEpisodes().size()-1; i++)
+		{
+			
+			JButton episode = new JButton(show.getEpisodes().get(i).getName());
+		}
 		
 		//
 		
@@ -323,11 +328,12 @@ public class MainFrame extends JFrame {
 	}
 	
 	
-	public void addAllShowsGUI(ArrayList allShows)
+	/*public void addAllShowsGUI(ArrayList<TVShow> allShows)
 	{
 		for (int i=0; i<allShows.size()-1; i++)
 		{
-			//addShowGUI(allShows.get(i));
+			addShowGUI(allShows.get(i));
 		}
 	}
+	*/
 }

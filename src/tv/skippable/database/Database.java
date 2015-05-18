@@ -90,7 +90,7 @@ public class Database {
 			JSONArray betalist = new JSONArray();
 			for (int j = 0 ; j < a.get(i).getShows().size(); j++)
 			{
-				betalist.add(a.get(i).getShows().get(j));
+				betalist.add(a.get(i).getShows().get(j).getName());
 			}
 			
 			alpha.put("user show list", betalist);
@@ -137,11 +137,15 @@ public class Database {
 	{
 		Database thisOne = new Database();
 		TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Episode>());
+		TVShow The_Simpsons = new TVShow("The Simpsons", new ArrayList<Episode>());
 		thisOne.getshowList().add(House_of_Cards);
 		User user1 = new User("dankLord69" , "420alldayeveryday");
 		User user2 = new User("dankmemecreatorbydowneyultrasoft" , "password");
 		User user3 = new User("North Korea", "Best Korea");
 		User user4 = new User("Riley Taylor", "youtube tutorial legend");
+		user1.addShow(House_of_Cards);
+		user1.addShow(The_Simpsons);
+		user2.addShow(The_Simpsons);
 		userList.add(user1);
 		userList.add(user2);
 		userList.add(user3);

@@ -9,6 +9,9 @@ import tv.skippable.backend.Review;
 import tv.skippable.backend.TVShow;
 import tv.skippable.backend.User;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class Database {
 
@@ -72,18 +75,35 @@ public class Database {
 		e.getReviews().add(r);
 	}
 	
-	public void save(List<User> a)	//writing data to text document?
+	public void save(List<User> a) 	//writing data to text document?
 	{
 		JSONArray list = new JSONArray();
-
+		JSONObject obj = new JSONObject();
+		//obj.put("Name:", "Database");
+		
 		for (int i = 0; i < a.size(); i++)
 		{
 			list.add(a.get(i));
 		}
 		
-		//to be implemented later
+		obj.put("User list", list);
 		
-		
+		try {
+			FileWriter file = new FileWriter("H:/Comp. Sci SL/CompSciSL_Workspace/SkippableTV_15.3/src/Database Text Document");
+			file.write(obj.toJSONString());
+			}
+		catch (IOException e)
+			{
+			e.printStackTrace();
+			}
+		/*finally
+			{
+			file.flush();
+			file.close();
+			}*/
+	
+	
+	
 	}
 	
 	
@@ -99,20 +119,20 @@ public class Database {
 	
 	//					https://code.google.com/p/json-simple/wiki/EncodingExamples			<-- json library api
 	
-	public static void main (String[] args)
+	public static void main (String[] args) 
 	{
-		//Database thisOne = new Database();
-		/*TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Season>());
-		thisOne.getshowList().add(House_of_Cards);*/
-		//User user1 = new User("dankLord69" , "420alldayeveryday");
-		//User user2 = new User("dankmemecreatorbydowneyultrasoft" , "password");
-		//User user3 = new User("North Korea", "Best Korea");
-		//User user4 = new User("Riley Taylor", "youtube tutorial legend");
-		//userList.add(user1);
-		//userList.add(user2);
-		//userList.add(user3);
-		//userList.add(user4);
-		
+		Database thisOne = new Database();
+		TVShow House_of_Cards = new TVShow("House of Cards", new ArrayList<Episode>());
+		thisOne.getshowList().add(House_of_Cards);
+		User user1 = new User("dankLord69" , "420alldayeveryday");
+		User user2 = new User("dankmemecreatorbydowneyultrasoft" , "password");
+		User user3 = new User("North Korea", "Best Korea");
+		User user4 = new User("Riley Taylor", "youtube tutorial legend");
+		userList.add(user1);
+		userList.add(user2);
+		userList.add(user3);
+		userList.add(user4);
+		thisOne.save(userList);
 		
 	}
 		

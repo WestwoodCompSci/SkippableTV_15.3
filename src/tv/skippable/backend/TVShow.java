@@ -130,7 +130,7 @@ public class TVShow {
 		private Episode[] quickSort(Episode[] stuff)
 		{
 			if(stuff == null || stuff.length == 0)
-				return null;
+				return new Episode[0];
 			episodes = stuff;
 			length = stuff.length;
 			sortHelper(0, length - 1);
@@ -173,7 +173,7 @@ public class TVShow {
 		private Episode[] quickSort2 (Episode[] stuff)
 		{
 			if(stuff == null || stuff.length == 0)
-				return null;
+				return new Episode[0];
 			episodes = stuff;
 			length = stuff.length;
 			sortHelper2(0, length - 1);

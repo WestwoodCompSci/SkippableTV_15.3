@@ -301,6 +301,8 @@ public class MainFrame extends JFrame {
 	
 	public void addShowGUI(TVShow show)
 	{
+		
+	
 		//show title 
 		String s = show.getName();
 		 

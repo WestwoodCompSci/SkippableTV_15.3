@@ -15,47 +15,11 @@ import tv.skippable.database.Database;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
->>>>>>> origin/master
 
 
 public class Server 
 {
-<<<<<<< HEAD
 
-	Scanner in;
-	PrintWriter out;
-	Socket socket;
-	public Server(String hostname) throws UnknownHostException, IOException
-	{
-		 try{
-			 socket = new Socket(hostname, 9001);
-			  } catch (IOException e) {
-			    System.out.println("Could not listen on port 9001");
-			    System.exit(-1);
-			  }
-		
-		 out = new PrintWriter(socket.getOutputStream(), true);
-	     in = new Scanner(new InputStreamReader(socket.getInputStream()));
-	}
-	
-	public void run() throws ClassNotFoundException
-	{
-		String identify;
-		while(true)
-		{
-			try
-			{
-				identify = (String) in.readObject();
-			}
-			catch (IOException e) 
-			{
-				System.out.println("Read failed");
-				System.exit(-1);
-			}
-		}
-	
-	}
-=======
 	ServerSocket serverSocket;
 	int portNumber = 9001;
 	
@@ -74,6 +38,5 @@ public class Server
 		        new InputStreamReader(clientSocket.getInputStream()));
 	}
     
->>>>>>> origin/master
 	
 }

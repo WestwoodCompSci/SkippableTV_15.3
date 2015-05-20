@@ -96,20 +96,12 @@ public class MainFrame extends JFrame {
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
-		Image image = GUIHelpers.getIcon("images/left arrow.png").getImage();
-		Image newIm = image.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
-		ImageIcon newi1 = new ImageIcon(newIm);
-		
-		Image image2 = GUIHelpers.getIcon("images/right arrow.png").getImage();
-		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
-		ImageIcon newi2 = new ImageIcon(newIm2);
-		
-		JButton arrow1 = new JButton(newi1); 
+		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20)); 
 		arrow1.setMinimumSize(new Dimension(40,40));
 		arrow1.setPreferredSize(new Dimension(40,40));
 		arrow1.setMaximumSize(new Dimension(40,40));
 		
-		JButton arrow2 = new JButton(newi2);
+		JButton arrow2 = new JButton(GUIHelpers.getIcon("images/right arrow.png", 20, 20));
 		arrow2.setMinimumSize(new Dimension(40,40));
 		arrow2.setPreferredSize(new Dimension(40,40));
 		arrow2.setMaximumSize(new Dimension(40,40));
@@ -174,25 +166,15 @@ public class MainFrame extends JFrame {
 			
 			
 			
-			//go picture
-			Image image3 = GUIHelpers.getIcon("images/go button.png").getImage();
-			Image newIm3 = image3.getScaledInstance(50,40 , java.awt.Image.SCALE_SMOOTH);
-			ImageIcon newi3 = new ImageIcon(newIm3);
-			
-			//goButton
-			JButton goButton = new JButton(newi3);
+			//go button
+			JButton goButton = new JButton(GUIHelpers.getIcon("images/go button.png", 50, 40));
 			goButton.setPreferredSize(new Dimension(50,40));
 		//	goButton.setMaximumSize(new Dimension(50,40));
 			goButton.setMinimumSize(new Dimension(50,40));
 
 			
 			//remove button
-			Image image4 = GUIHelpers.getIcon("images/remove button.png").getImage();
-			Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
-			ImageIcon newi4 = new ImageIcon(newIm4);
-			
-			//removeButton
-			JButton removeButton = new JButton(newi4);
+			JButton removeButton = new JButton(GUIHelpers.getIcon("images/remove button.png", 200, 40));
 			removeButton.setPreferredSize(new Dimension(200,40));
 			removeButton.setMinimumSize(new Dimension(200,40));
 			

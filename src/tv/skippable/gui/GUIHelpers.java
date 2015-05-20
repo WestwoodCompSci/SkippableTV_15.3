@@ -1,6 +1,8 @@
 package tv.skippable.gui;
 
+import java.awt.Image;
 import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -20,5 +22,14 @@ public class GUIHelpers {
 		URL path = GUIHelpers.class.getResource(name);
 		
 		return new ImageIcon(path);
+	}
+	
+	public static ImageIcon getIcon(String name, int w, int h) {
+		// load it into an image
+		Image original = GUIHelpers.getIcon(name).getImage();
+		
+		// scale it
+		Image scaled = original.getScaledInstance(w, h, java.awt.Image.SCALE_SMOOTH);
+		return new ImageIcon(scaled);
 	}
 }

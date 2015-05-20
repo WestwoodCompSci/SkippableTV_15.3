@@ -121,12 +121,15 @@ public class Database {
 	
 	}
 	
-	
-	
-	public void getUser(User a)	//based off formatting of text file or maybe based off formatting of array list
+	/*public String getUser(User a)	//toString method
 	{
+		String s = "";
+		s += a.getName();
+		a += "___.__";
+		a += a.getPassword();
 		
-	}
+		
+	}*/
 		
 	
 	//                  http://www.json.org/            

@@ -50,7 +50,7 @@ public class Episode{
 	{
 		if (other.getEpisodeNumber() > getEpisodeNumber())
 			return -1;
-		if (other.getEpisodeNumber() < getEpisodeNumber())
+		else if (other.getEpisodeNumber() < getEpisodeNumber())
 			return 1;
 		return 0;
 	}
@@ -59,7 +59,7 @@ public class Episode{
 	{
 		if (other.getRating() > getRating())
 			return -1;
-		if (other.getRating() < getRating())
+		else if (other.getRating() < getRating())
 			return 1;
 		return 0;
 	}

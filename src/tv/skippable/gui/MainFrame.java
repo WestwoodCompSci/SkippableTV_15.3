@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import tv.skippable.backend.*;
+import tv.skippable.network.*;
 
 import javax.swing.*;
 
@@ -25,7 +27,7 @@ public class MainFrame extends JFrame {
 		
 		this.setLocation(screenSize.width, screenSize.height);
 		
-		//this.addAllShowsGUI(); <--need it to add all the shows...i think...like a load function?
+		
 		//vBox
 		Box vBox = Box.createVerticalBox();
 		JScrollPane frame = new JScrollPane(vBox,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -37,15 +39,18 @@ public class MainFrame extends JFrame {
 		
 		//More Boxes
 		Box menuBox = Box.createHorizontalBox();
-		Box lineBox = Box.createHorizontalBox();
+		JSeparator line2 = new JSeparator();
 		Box showBox = Box.createHorizontalBox();
 		Box episodes = Box.createHorizontalBox();
 		Box episodeProgress = Box.createHorizontalBox();
 		Box labelTime = Box.createHorizontalBox();
 		Box time = Box.createHorizontalBox();
+		JSeparator line = new JSeparator();
 		
 		//Adding Boxes
 		vBox.add(menuBox);
+		frame.add(Box.createVerticalStrut(10));
+		vBox.add(line2);
 		frame.add(Box.createVerticalStrut(10));
 		vBox.add(showBox);
 		frame.add(Box.createVerticalStrut(50));
@@ -57,6 +62,7 @@ public class MainFrame extends JFrame {
 		frame.add(Box.createVerticalStrut(10));
 		vBox.add(time);
 		frame.add(Box.createVerticalStrut(10));
+		vBox.add(line);
 		
 		
 		//Menu Box
@@ -71,6 +77,11 @@ public class MainFrame extends JFrame {
 		menuBox.add(Box.createHorizontalStrut(50));
 		menuBox.add(myShows);
 		menuBox.add(Box.createHorizontalStrut(5));
+		
+		
+		//lineBox
+		
+		
 		
 		
 		
@@ -257,13 +268,26 @@ public class MainFrame extends JFrame {
 					
 				});
 			 
+			 arrow1.addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					//change to seasons prior
+					
+				}
+				 
+			 });
 			 
+			 arrow2.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						//change to seasons after
+						
+					}
+					 
+				 });
 			 
-			 
-			 
-			 
-			 
-		 
 			 
 			 
 
@@ -274,20 +298,42 @@ public class MainFrame extends JFrame {
 	
 	public JFrame getFrame(){return this;}
 	
-	/*
+	
 	public void addShowGUI(TVShow show)
 	{
-		 show.getName();
+		
+	
+		//show title 
+		String s = show.getName();
+		 
+		//show length
+		int time = show.getLength();
+		
+		//get season
+		
+		//# episode per season
+		for(int i =0; i<show.getEpisodes().size()-1; i++)
+		{
+			
+			JButton episode = new JButton(show.getEpisodes().get(i).getName());
+		}
+		
+		//
+		
+		
+		
+		 
 		 
 		
 	}
-	*/
 	
-	public void addAllShowsGUI(ArrayList allShows)
+	
+	/*public void addAllShowsGUI(ArrayList<TVShow> allShows)
 	{
 		for (int i=0; i<allShows.size()-1; i++)
 		{
-			//addShowGUI(allShows.get(i));
+			addShowGUI(allShows.get(i));
 		}
 	}
+	*/
 }

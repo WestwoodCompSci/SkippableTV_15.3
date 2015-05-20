@@ -10,7 +10,7 @@ import tv.skippable.network.*;
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
-	public MainFrame() {
+	public MainFrame(User user, TVShow show) {
 		
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,7 +87,9 @@ public class MainFrame extends JFrame {
 		
 		
 		//showBox
-		JLabel title = new JLabel("Title of Show");
+		
+		JLabel title = new JLabel(show.getName());
+		
 		title.setFont(new Font("Times Roman", Font.BOLD, 20));
 		//title.setFont(title.getFont().deriveFont(40));
 		
@@ -95,12 +97,12 @@ public class MainFrame extends JFrame {
 		
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
-		 
-		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20)); 
+		
+		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20));
 		arrow1.setMinimumSize(new Dimension(40,40));
 		arrow1.setPreferredSize(new Dimension(40,40));
 		arrow1.setMaximumSize(new Dimension(40,40));
-		
+
 		JButton arrow2 = new JButton(GUIHelpers.getIcon("images/right arrow.png", 20, 20));
 		arrow2.setMinimumSize(new Dimension(40,40));
 		arrow2.setPreferredSize(new Dimension(40,40));
@@ -165,15 +167,13 @@ public class MainFrame extends JFrame {
 			 minutesText.setMaximumSize(new Dimension(100,40));
 			
 			
-			
-			//go button
+			//goButton
 			JButton goButton = new JButton(GUIHelpers.getIcon("images/go button.png", 50, 40));
 			goButton.setPreferredSize(new Dimension(50,40));
 		//	goButton.setMaximumSize(new Dimension(50,40));
 			goButton.setMinimumSize(new Dimension(50,40));
-
 			
-			//remove button
+			//removeButton
 			JButton removeButton = new JButton(GUIHelpers.getIcon("images/remove button.png", 200, 40));
 			removeButton.setPreferredSize(new Dimension(200,40));
 			removeButton.setMinimumSize(new Dimension(200,40));
@@ -238,6 +238,7 @@ public class MainFrame extends JFrame {
 						
 						MyShowsWindow p = new MyShowsWindow();
 						p.setVisible(true);
+						dispose();
 
 					
 						

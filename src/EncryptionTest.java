@@ -10,9 +10,9 @@ public class EncryptionTest {
 		System.out.println(encPass);
 		String dencPass = Encryption.decrypt(encPass);
 		
-		System.out.println("Password: "+myPass);
-		System.out.println("Encrypted Password: "+encPass);
-		System.out.println("Decrypted Password: "+dencPass);
+		System.out.println("Password: "+ myPass);
+		System.out.println("Encrypted Password: " + encPass);
+		System.out.println("Decrypted Password: " + dencPass);
 	}
 
 }

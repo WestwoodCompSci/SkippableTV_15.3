@@ -1,5 +1,6 @@
 package tv.skippable.gui;
 
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -93,9 +94,9 @@ public class MainFrame extends JFrame {
 		title.setFont(new Font("Times Roman", Font.BOLD, 20));
 		//title.setFont(title.getFont().deriveFont(40));
 		
-		String s = "Season 3" + ":" + "" + "2hrs 30 min";
+		//String s = season + 
 		
-		JLabel seasonNum = new JLabel (s);
+		JLabel seasonNum = new JLabel ("hi");
 		JProgressBar seasonPro = new JProgressBar();
 		
 		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20));

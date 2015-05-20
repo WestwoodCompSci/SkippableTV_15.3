@@ -96,12 +96,12 @@ public class MainFrame extends JFrame {
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
-		ImageIcon i1 = new ImageIcon("left arrow.png");
+		ImageIcon i1 = new ImageIcon(MainFrame.class.getResource("images/left arrow.png"));
 		Image image = i1.getImage();
 		Image newIm = image.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi1 = new ImageIcon(newIm);
 		
-		ImageIcon i2 = new ImageIcon("right arrow.png");
+		ImageIcon i2 = new ImageIcon(MainFrame.class.getResource("images/right arrow.png"));
 		Image image2 = i2.getImage();
 		Image newIm2 = image2.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newi2 = new ImageIcon(newIm2);
@@ -177,7 +177,7 @@ public class MainFrame extends JFrame {
 			
 			
 			//go picture
-			ImageIcon i3 = new ImageIcon("go button.png");
+			ImageIcon i3 = new ImageIcon(MainFrame.class.getResource("images/go button.png"));
 			Image image3 = i3.getImage();
 			Image newIm3 = image3.getScaledInstance(50,40 , java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi3 = new ImageIcon(newIm3);
@@ -191,7 +191,7 @@ public class MainFrame extends JFrame {
 			
 			//remove button
 			
-			ImageIcon i4 = new ImageIcon("remove button.png");
+			ImageIcon i4 = new ImageIcon(MainFrame.class.getResource("images/remove button.png"));
 			Image image4 = i4.getImage();
 			Image newIm4 = image4.getScaledInstance(200, 40, java.awt.Image.SCALE_SMOOTH);
 			ImageIcon newi4 = new ImageIcon(newIm4);

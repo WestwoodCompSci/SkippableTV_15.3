@@ -35,4 +35,12 @@ public class User {
 	{
 		return password;
 	}
+	
+	public void updateShow(TVShow newShow)
+	{
+		for  (int i = 0; i < showList.size(); i++)
+			if (showList.get(i).getName().equals(newShow.getName()))
+				showList.set(i, newShow);
+			else addShow(newShow);
+	}
 }

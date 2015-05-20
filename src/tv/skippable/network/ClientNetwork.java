@@ -9,27 +9,31 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
 import java.util.Scanner;
 
 import tv.skippable.backend.TVShow;
 import tv.skippable.backend.User;
-
 import tv.skippable.backend.User;
 
 
 public class ClientNetwork {
 	
-	String hostname = "55F9622";
+	String hostname = "55F9622"; //Depends
 	BufferedReader in;
 	PrintWriter out;
 	Socket socket;
+	ObjectInputStream obIn;
+	
 	
 	public void listenSocket(){
 	//Create socket connection
 	   try{
-	     socket = new Socket(hostname, 9001);
+	     socket = new Socket(hostname, 9090);
 	     out = new PrintWriter(socket.getOutputStream(), true);
 	     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+	     obIn = new ObjectInputStream(socket.getInputStream());
+	     
 	   } catch (UnknownHostException e) {
 	     System.out.println("Unknown host: " + hostname);
 	     System.exit(1);
@@ -39,9 +43,8 @@ public class ClientNetwork {
 	   }
 	}
 	
-	public void run()
-	{
-		String identify; 
+	public void run(String identify)
+	{ 
 		while(true)
 		{
 			try
@@ -56,45 +59,50 @@ public class ClientNetwork {
 		}
 	}
 	
-
-	public User getUser()
+	public boolean confirmUser(String username, String password)
 	{
-		String identify; 
+		out.println(username);
+		out.println(password);
+		
 		while(true)
 		{
-			try
+			try 
 			{
-				identify = in.readLine();
+				temp = (List<TVShow>) obIn.readObject();
+				break;
 			}
-			catch (IOException e) 
+			catch (ClassNotFoundException e) 
 			{ 
 				System.out.println("Read failed");
 				System.exit(-1);
 			}
 		}
-		//out
+		
 	}
-
-
-	public User getUserShowList(String username,String password) throws IOException
-	{
-	//	out.writeObject(username);
-		Server server = new Server();
-
-		User user = new User(username, password);
-		user.getShows();
-		
-		
-		
-		return null;
-	}
-
 	
-	public TVShow getTVShow()
+	public List<TVShow> getUserShowList(String username) throws IOException
 	{
-		return null;
-
+		
+	// push a username, receive object userShowList
+		List<TVShow> temp;
+		out.println(username);
+		while(true)
+		{
+			try 
+			{
+				temp = (List<TVShow>) obIn.readObject();
+				break;
+			}
+			catch (ClassNotFoundException e) 
+			{ 
+				System.out.println("Read failed");
+				System.exit(-1);
+			}
+		}
+		
+		return temp;
 	}
+
 
 
 }

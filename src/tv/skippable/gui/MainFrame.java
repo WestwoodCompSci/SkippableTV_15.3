@@ -95,7 +95,7 @@ public class MainFrame extends JFrame {
 		
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
-		
+		 
 		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20)); 
 		arrow1.setMinimumSize(new Dimension(40,40));
 		arrow1.setPreferredSize(new Dimension(40,40));

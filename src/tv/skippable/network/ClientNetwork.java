@@ -30,7 +30,7 @@ public class ClientNetwork {
 	public User getUserShowList(String username,String password) throws IOException
 	{
 		out.writeObject(username);
-		Server server = new Server(
+		Server server = new Server();
 		User user = new User(username, password);
 		user.getShows();
 		

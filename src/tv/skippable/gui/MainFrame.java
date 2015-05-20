@@ -10,7 +10,7 @@ import tv.skippable.network.*;
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
-	public MainFrame() {
+	public MainFrame(TVShow show) {
 		
 		this.setTitle("Skippable.TV");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -238,6 +238,7 @@ public class MainFrame extends JFrame {
 						
 						MyShowsWindow p = new MyShowsWindow();
 						p.setVisible(true);
+						dispose();
 
 					
 						

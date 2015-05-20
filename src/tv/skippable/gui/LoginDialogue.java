@@ -3,8 +3,15 @@ package tv.skippable.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
+
+import tv.skippable.backend.Episode;
+import tv.skippable.backend.Review;
+import tv.skippable.backend.TVShow;
+import tv.skippable.backend.User;
 
 public class LoginDialogue extends JDialog {
 	private static final long serialVersionUID = -5853916478565948100L;
@@ -91,7 +98,12 @@ public class LoginDialogue extends JDialog {
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub	
-				MainFrame w = new MainFrame();
+				ArrayList<Episode> episodeList = new ArrayList<Episode>();
+				Episode episode = new Episode("Default", 1, 1, 0, null);
+				episodeList.add(episode);
+				TVShow defaultshow = new TVShow("Show", episodeList);
+				User defaultUser = new User("random", "password");
+				MainFrame w = new MainFrame(defaultUser, defaultshow);
 				w.setVisible(true);
 				dispose();
 			}

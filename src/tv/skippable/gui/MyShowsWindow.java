@@ -72,8 +72,8 @@ public class MyShowsWindow extends JFrame
 					System.out.println(selectedShow.getName());
 					
 					
-					MainFrame frame = new MainFrame();
-					frame.addShowGUI(selectedShow);
+					//MainFrame frame = new MainFrame();
+					//frame.addShowGUI(selectedShow);
 					
 					dispose();
 					

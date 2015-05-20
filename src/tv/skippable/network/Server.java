@@ -1,7 +1,18 @@
 package tv.skippable.network;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+import tv.skippable.database.Database;
+
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,6 +20,7 @@ import java.net.Socket;
 
 public class Server 
 {
+
 	ServerSocket serverSocket;
 	int portNumber = 9001;
 	

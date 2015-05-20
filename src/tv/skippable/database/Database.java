@@ -121,15 +121,19 @@ public class Database {
 	
 	}
 	
-	/*public String getUser(User a)	//toString method
+	public void storeShows(List<TVShow> a)
 	{
-		String s = "";
-		s += a.getName();
-		a += "___.__";
-		a += a.getPassword();
+		
+		for (int i = 0; i < a.size(); i++){
+			showList.add(a.get(i));
+		}
 		
 		
-	}*/
+	}
+	
+	
+	
+	
 		
 	
 	//                  http://www.json.org/            

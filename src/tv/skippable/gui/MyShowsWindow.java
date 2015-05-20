@@ -52,6 +52,7 @@ public class MyShowsWindow extends JFrame
 			list.setLayoutOrientation(JList.VERTICAL);
 			list.setVisibleRowCount(-1);
 			
+			JButton j = new JButton("Cancel");
 			JScrollPane listScroller = new JScrollPane(list);
 			vBox.add(listScroller);
 			

@@ -32,6 +32,16 @@ public class TVShow {
 		return length;
 	}
 	
+	public List<Episode> getSeason(int seasonNumber)
+	{
+		List<Episode> season = new ArrayList<Episode>();
+		for (int i = 0; i < episodes.size(); i++) {
+			if (episodes.get(i).getEpisodeNumber() / 100 == seasonNumber)
+				season.add(episodes.get(i));
+		}
+		return season;
+	}
+	
 	public TVShow bestByRating(double minRating)
 	{
 		rateSort();

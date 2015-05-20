@@ -4,7 +4,9 @@ package tv.skippable.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 import tv.skippable.backend.*;
 import tv.skippable.network.*;
 
@@ -94,9 +96,9 @@ public class MainFrame extends JFrame {
 		title.setFont(new Font("Times Roman", Font.BOLD, 20));
 		//title.setFont(title.getFont().deriveFont(40));
 		
-		//String s = season + 
+		String s = "Season " + show.getLength() + " ";
 		
-		JLabel seasonNum = new JLabel ("hi");
+		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();
 		
 		JButton arrow1 = new JButton(GUIHelpers.getIcon("images/left arrow.png", 20, 20));
@@ -132,8 +134,15 @@ public class MainFrame extends JFrame {
 			JLabel question = new JLabel("What Episode Are You On?");
 			question.setFont(new Font("Times Roman", Font.BOLD, 15));
 			
+			//changing arraylist to array
+			ArrayList<Episode> episodeList1 =  (ArrayList) show.getEpisodes();
+			Episode[] actualEpisodeList = new Episode[episodeList1.size()];
+			for(int i =0; i<episodeList1.size()-1; i++ )
+			{
+				actualEpisodeList[i].equals(episodeList1.get(i));
+			}
 			
-			JComboBox episodeList = new JComboBox ();
+			JComboBox episodeList = new JComboBox (actualEpisodeList);
 			episodeList.setPreferredSize(new Dimension(200,40));
 			episodeList.setMaximumSize(new Dimension(200,40));
 			

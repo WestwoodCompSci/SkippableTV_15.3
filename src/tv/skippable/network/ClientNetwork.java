@@ -14,6 +14,8 @@ import java.util.Scanner;
 import tv.skippable.backend.TVShow;
 import tv.skippable.backend.User;
 
+import tv.skippable.backend.User;
+
 
 public class ClientNetwork {
 	
@@ -54,6 +56,7 @@ public class ClientNetwork {
 		}
 	}
 	
+
 	public User getUser()
 	{
 		String identify; 
@@ -69,7 +72,15 @@ public class ClientNetwork {
 				System.exit(-1);
 			}
 		}
-		out
+		//out
+	}
+
+
+	public User getUserShowList(String username,String password) throws IOException
+	{
+	//	out.writeObject(username);
+		Server server = new Server();
+
 		User user = new User(username, password);
 		user.getShows();
 		
@@ -77,11 +88,13 @@ public class ClientNetwork {
 		
 		return null;
 	}
+
 	
 	public TVShow getTVShow()
 	{
-		
+		return null;
+
 	}
-	
+
 
 }

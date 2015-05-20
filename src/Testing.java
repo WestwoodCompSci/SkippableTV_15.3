@@ -9,7 +9,7 @@ import tv.skippable.backend.Episode;
 public class Testing 
 {
 
-	//Shouldn't each TV show have an array of seasons?
+	//Shouldn't each TV show have an array or arraylist of seasons?
 	
 	public static void main(String[] args)
 	{

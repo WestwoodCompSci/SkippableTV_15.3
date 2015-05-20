@@ -6,6 +6,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import tv.skippable.backend.User;
+
 
 public class ClientNetwork {
 	
@@ -25,16 +27,16 @@ public class ClientNetwork {
         out = new ObjectOutputStream(socket.getOutputStream());
 	}
 	
-	/*public User getUserShowList(String username,String password) throws IOException
+	public User getUserShowList(String username,String password) throws IOException
 	{
 		out.writeObject(username);
-		Server 
+		Server server = new Server(
 		User user = new User(username, password);
 		user.getShows();
 		
 		
 		
 		return null;
-	}*/
+	}
 
 }

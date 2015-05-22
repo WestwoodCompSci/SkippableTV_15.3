@@ -7,6 +7,7 @@ import tv.skippable.backend.Review;
 import tv.skippable.backend.TVShow;
 import tv.skippable.backend.User;
 import tv.skippable.database.Database;
+import tv.skippable.gui.LoginDialogue;
 import tv.skippable.gui.SkippableTVGUIMain;
 
 
@@ -35,7 +36,12 @@ public class GeneralTester {
 		//create and add show to database
 		data.getshowList().add(new TVShow("Some Show",someShowEpisodes));
 		
+		//create and add a user
+		User someUser = new User("some_user","passwords");
+		data.getuserList().add(someUser);
 		
+		LoginDialogue w = new LoginDialogue(data.getuserList());
+		w.setVisible(true);
 
 	}
 

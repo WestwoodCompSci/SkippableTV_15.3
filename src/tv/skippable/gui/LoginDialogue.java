@@ -19,7 +19,7 @@ public class LoginDialogue extends JDialog {
 	private JTextField username;
 	private JPasswordField password;
 	
-	public LoginDialogue() {
+	public LoginDialogue(List<User> users) {
 		this.setTitle("Log In — skippable.tv");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
@@ -98,14 +98,40 @@ public class LoginDialogue extends JDialog {
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub	
-				ArrayList<Episode> episodeList = new ArrayList<Episode>();
+				
+				User loginUser=null;
+				
+				for(User u:users){
+					if(u.getUsername().equals(username.getText())){
+						loginUser=u;
+						break;
+					}
+				}
+				if(loginUser==null){
+					username.setText("This user does not exist");
+					password.setText("");
+				}
+				else if(!loginUser.getPassword().equals(password.getPassword())){
+					password.setText("");
+					username.setText("Incorrect password");
+				}
+				else{
+					ArrayList<Episode> episodeList = new ArrayList<Episode>();
+					Episode episode = new Episode("Default", 1, 1, 0, null);
+					episodeList.add(episode);
+					TVShow defaultshow = new TVShow("Show", episodeList);
+					MainFrame w = new MainFrame(loginUser, defaultshow);
+					w.setVisible(true);
+					dispose();
+				}
+				/*ArrayList<Episode> episodeList = new ArrayList<Episode>();
 				Episode episode = new Episode("Default", 1, 1, 0, null);
 				episodeList.add(episode);
 				TVShow defaultshow = new TVShow("Show", episodeList);
 				User defaultUser = new User("random", "password");
 				MainFrame w = new MainFrame(defaultUser, defaultshow);
 				w.setVisible(true);
-				dispose();
+				dispose();*/
 			}
 		});
 		buttons.add(logIn);
@@ -142,7 +168,7 @@ public class LoginDialogue extends JDialog {
 	
 	
 	// test method
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// Set the look and feel
 		try {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
@@ -158,5 +184,5 @@ public class LoginDialogue extends JDialog {
 				w.setVisible(true);
 			}
 		});
-	}
+	}*/
 }

@@ -75,15 +75,13 @@ public class MyShowsWindow extends JFrame
 					String value = (String) list.getSelectedValue();
 					int i = list.getSelectedIndex();
 					TVShow selectedShow = user.getShows().get(i);
-					System.out.println(selectedShow.getName());
-					
+					//System.out.println(selectedShow.getName());
 					
 					MainFrame frame = new MainFrame(user,selectedShow);
 					
-					
 					dispose();
 					
-					//i have no idea if any of this is right/feasible...plz make changes as necessary...or get rid of it all.
+					
 				}
 
 				

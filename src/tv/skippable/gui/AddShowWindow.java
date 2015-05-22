@@ -2,9 +2,14 @@ package tv.skippable.gui;
 
 
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -34,8 +39,30 @@ public class AddShowWindow extends JFrame
 		mainBox.add(hBox);
 		mainBox.add(Box.createVerticalStrut(5));
 		hBox.add(Box.createHorizontalStrut(5));
-		JList showList = new JList();
+		String[] titles = null;
+		Scanner scan;
+		int count = 0;
+		try
+		{
+			
+			scan = new Scanner(new File("Titles.txt"));
+			while(scan.hasNextLine())
+			{
+				String nextLine = scan.nextLine();
+				titles[count] = nextLine;
+				count++;
+			}
+			scan.close();
+		}
+		catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		
+		JList showList = new JList(titles);
+		
 		JScrollPane scrollList = new JScrollPane(showList);
+		
 		hBox.add(scrollList);
 		hBox.add(Box.createHorizontalStrut(5));
 		

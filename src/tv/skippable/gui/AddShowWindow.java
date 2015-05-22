@@ -22,6 +22,13 @@ import javax.swing.SwingUtilities;
 public class AddShowWindow extends JFrame
 {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4677544451215931749L;
+
+
+
 	public AddShowWindow() 
 	{
 		//The window consists of a horizontal box with half of it containing a Scroll Pane of shows
@@ -30,7 +37,7 @@ public class AddShowWindow extends JFrame
 		
 		this.setTitle("Add Show");
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		this.setPreferredSize(new Dimension(600, 400));
+		this.setPreferredSize(new Dimension(650, 400));
 		this.setLocation(400, 200);
 		Box mainBox = Box.createVerticalBox();
 		this.add(mainBox);
@@ -39,19 +46,21 @@ public class AddShowWindow extends JFrame
 		mainBox.add(hBox);
 		mainBox.add(Box.createVerticalStrut(5));
 		hBox.add(Box.createHorizontalStrut(5));
-		String[] titles = null;
-		Scanner scan;
-		int count = 0;
+		String[] titles = new String[3007];
+		
+		
 		try
 		{
 			
-			scan = new Scanner(new File("Titles.txt"));
+			Scanner scan = new Scanner(new File("Titles.txt"));
+			int i=0;
 			while(scan.hasNextLine())
 			{
-				String nextLine = scan.nextLine();
-				titles[count] = nextLine;
-				count++;
+					titles[i] = scan.nextLine(); 
+					i++;
 			}
+			
+			
 			scan.close();
 		}
 		catch(FileNotFoundException e)
@@ -60,8 +69,12 @@ public class AddShowWindow extends JFrame
 		}
 		
 		JList showList = new JList(titles);
-		
+		showList.setFixedCellHeight(20);
 		JScrollPane scrollList = new JScrollPane(showList);
+		scrollList.setSize(309,50);
+		scrollList.setPreferredSize(new Dimension(309,300));
+		scrollList.setMaximumSize(new Dimension(309,300));
+		scrollList.setMinimumSize(new Dimension(309,300));
 		
 		hBox.add(scrollList);
 		hBox.add(Box.createHorizontalStrut(5));
@@ -75,6 +88,10 @@ public class AddShowWindow extends JFrame
 		titlePane.setMaximumSize(new Dimension(309,50));
 		titlePane.setMinimumSize(new Dimension(309,50));
 		JTextPane descPane = new JTextPane();
+		descPane.setSize(309,200);
+		descPane.setPreferredSize(new Dimension(309,200));
+		descPane.setMaximumSize(new Dimension(309,200));
+		descPane.setMinimumSize(new Dimension(309,200));
 		JButton cancelButton = new JButton("Cancel");
 		JButton addButton = new JButton("Add");
 		Box smallHBox = Box.createHorizontalBox();
@@ -124,16 +141,16 @@ public class AddShowWindow extends JFrame
 	
 	
 	//TESTER: WILL BE REMOVED
-public static void main(String[] args)
-{
-	SwingUtilities.invokeLater(new Runnable() {
-
-		@Override
-		public void run() 
-		{
-			new AddShowWindow();
-		}} );
-}
+//public static void main(String[] args)
+//{
+//	SwingUtilities.invokeLater(new Runnable() {
+//
+//		@Override
+//		public void run() 
+//		{
+//			new AddShowWindow();
+//		}} );
+//}
 }
 //todo: add art aspect
 //todo: make the buttons do things

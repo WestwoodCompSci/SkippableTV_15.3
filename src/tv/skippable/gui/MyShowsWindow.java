@@ -14,10 +14,11 @@ import javax.swing.plaf.metal.*;
 import tv.skippable.backend.Episode;
 import tv.skippable.backend.Review;
 import tv.skippable.backend.TVShow;
+import tv.skippable.backend.User;
 
 public class MyShowsWindow extends JFrame 
 {
-	public MyShowsWindow()
+	public MyShowsWindow(User user)
 	{
 		this.setTitle("My Shows");
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -31,23 +32,28 @@ public class MyShowsWindow extends JFrame
 			this.setContentPane(frame);
 			
 			//testing for list actionListener
-			ArrayList<Episode> episodeList= new ArrayList<Episode>();
-			Episode e = new Episode("Ep1", 1, 1, 23, null);
-			episodeList.add(e);
-			TVShow show1 = new TVShow("show1", episodeList); 
-			String name1 = show1.getName();
-			TVShow[] myShows = {show1};
-			String[] myShowsName = {name1};
+			//ArrayList<Episode> episodeList= new ArrayList<Episode>();
+			//Episode e = new Episode("Ep1", 1, 1, 23, null);
+			//episodeList.add(e);
+			//TVShow show1 = new TVShow("show1", episodeList); 
+			//String name1 = show1.getName();
+			//TVShow[] myShows = {show1};
+			//String[] myShowsName = {name1};
 			//-------------------------------
 			
-			String[] potato = {
-					"test 1", "yolo the obamacare",
-					"nein pls"
+			//String[] potato = {
+			//		"test 1", "yolo the obamacare",
+			//		"nein pls"
 					
 					//can we change this to an array of TVShows instead of String? I think it makes it easier to implement later...and then the JList just displays the TVShow title?
-			};
-				
-			JList list = new JList(myShowsName); //data has type Object[]
+			//};
+			
+			String[] userShowTitles=new String[user.getShows().size()];
+			for(int i=0;i<user.getShows().size();i++){
+				userShowTitles[i]=user.getShows().get(i).getName();				
+			}
+			
+			JList list = new JList(userShowTitles); //data has type Object[]
 			list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			list.setLayoutOrientation(JList.VERTICAL);
 			list.setVisibleRowCount(-1);
@@ -68,12 +74,12 @@ public class MyShowsWindow extends JFrame
 					//store what we selected to be implemented on Main Frame:
 					String value = (String) list.getSelectedValue();
 					int i = list.getSelectedIndex();
-					TVShow selectedShow = myShows[i];
+					TVShow selectedShow = user.getShows().get(i);
 					System.out.println(selectedShow.getName());
 					
 					
-					//MainFrame frame = new MainFrame();
-					//frame.addShowGUI(selectedShow);
+					MainFrame frame = new MainFrame(user,selectedShow);
+					
 					
 					dispose();
 					
@@ -93,7 +99,7 @@ public class MyShowsWindow extends JFrame
 		this.setVisible(true);
 	}
 	
-	public static void main(String[] args)
+	/*public static void main(String[] args)
 	{
 		
 		try {
@@ -111,5 +117,5 @@ public class MyShowsWindow extends JFrame
 			{
 				new MyShowsWindow();
 			}} );
-	}
+	}*/
 	}

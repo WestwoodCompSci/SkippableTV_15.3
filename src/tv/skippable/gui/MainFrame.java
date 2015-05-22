@@ -135,7 +135,7 @@ public class MainFrame extends JFrame {
 			question.setFont(new Font("Times Roman", Font.BOLD, 15));
 			
 			//changing arraylist to array
-			ArrayList<Episode> episodeList1 =  (ArrayList) show.getEpisodes();
+			ArrayList<Episode> episodeList1 =  (ArrayList<Episode>) show.getEpisodes();
 			Episode[] actualEpisodeList = new Episode[episodeList1.size()];
 			for(int i =0; i<episodeList1.size()-1; i++ )
 			{
@@ -246,7 +246,7 @@ public class MainFrame extends JFrame {
 					public void actionPerformed(ActionEvent e) 
 					{
 						
-						MyShowsWindow p = new MyShowsWindow();
+						MyShowsWindow p = new MyShowsWindow(user);
 						p.setVisible(true);
 						dispose();
 

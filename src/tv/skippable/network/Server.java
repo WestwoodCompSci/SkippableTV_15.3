@@ -42,7 +42,7 @@ public class Server
 					input = new ObjectInputStream(socket.getInputStream());
 					User user = null;
 				
-					String username = (String) input.readObject();
+					String username = (String ) input.readObject();
 					if (username.startsWith("GETLIST"))
 					{
 						for (int i = 0; i < d.getuserList().size(); i++)

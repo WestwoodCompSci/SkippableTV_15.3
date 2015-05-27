@@ -25,11 +25,11 @@ public class ClientNetwork {
 	Socket socket;
 	ObjectInputStream obIn;
 	
-	
 	public void listenSocket(){
 	//Create socket connection
 	   try{
 	     socket = new Socket(hostname, 9090);
+	     
 	     out = new PrintWriter(socket.getOutputStream(), true);
 	     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 	     obIn = new ObjectInputStream(socket.getInputStream());
@@ -43,51 +43,39 @@ public class ClientNetwork {
 	   }
 	}
 	
-	public void run(String identify)
-	{ 
+	public boolean confirmUser(String username, String password) throws IOException
+	{
+		out.println("CONFIRM" + password + "\n" + username);
+		Boolean temp;
 		while(true)
 		{
-			try
-			{
-				identify = in.readLine();
-			}
-			catch (IOException e) 
-			{ 
-				System.out.println("Read failed");
-				System.exit(-1);
-			}
+			temp = (Boolean) obIn.readBoolean();
+			break;
 		}
+		return temp;
 	}
 	
-	public boolean confirmUser(String username, String password)
+	public boolean registerUser(String username, String password) throws IOException
 	{
-		out.println(username);
-		out.println(password);
-		
+		out.println("REGISTER" + password + "\n" + username);
+		Boolean temp;
 		while(true)
 		{
-			try 
-			{
-				temp = (List<TVShow>) obIn.readObject();
-				break;
-			}
-			catch (ClassNotFoundException e) 
-			{ 
-				System.out.println("Read failed");
-				System.exit(-1);
-			}
+			temp = (Boolean) obIn.readBoolean();
+			break;
 		}
-		
+		return temp;
 	}
 	
 	public List<TVShow> getUserShowList(String username) throws IOException
 	{
 		
-	// push a username, receive object userShowList
+	//push a username, receive object userShowList
 		List<TVShow> temp;
-		out.println(username);
+		out.println("GETLIST" + username);
 		while(true)
 		{
+			temp = null;
 			try 
 			{
 				temp = (List<TVShow>) obIn.readObject();

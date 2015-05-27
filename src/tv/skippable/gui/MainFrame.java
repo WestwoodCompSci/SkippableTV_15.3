@@ -96,7 +96,7 @@ public class MainFrame extends JFrame {
 		title.setFont(new Font("Times Roman", Font.BOLD, 20));
 		//title.setFont(title.getFont().deriveFont(40));
 		
-		String s = "Season " + show.getLength() + " ";
+		String s = "Season: " + show.getSeason(1) + " ";
 		
 		JLabel seasonNum = new JLabel (s);
 		JProgressBar seasonPro = new JProgressBar();

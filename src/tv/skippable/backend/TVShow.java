@@ -9,7 +9,6 @@ public class TVShow {
 	private List<Episode> episodes;
 	private int length; //in minutes
 	
-	
 	public TVShow(String n, List <Episode> eps)
 	{
 		name = n;
@@ -35,23 +34,15 @@ public class TVShow {
 	
 	public List<Episode> getSeason(int seasonNumber)
 	{
-		List<Episode> season=new ArrayList<Episode>();
-		for(Episode e: episodes){
-			if(e.getSeasonNumber()==seasonNumber) season.add(e);
+		List<Episode> season = new ArrayList<Episode>();
+		for (int i = 0; i < episodes.size(); i++) {
+			if (episodes.get(i).getEpisodeNumber() / 100 == seasonNumber)
+				season.add(episodes.get(i));
 		}
-		
 		return season;
 	}
 	
-	public int getSeasonLength(int seasonNumber){
-		List<Episode> season=getSeason(seasonNumber);
-		int len=0;
-		
-		for(Episode e: season){
-			len+=e.getLength();
-		}
-		return len;
-	}
+	
 	
 	public TVShow bestByRating(double minRating)
 	{
@@ -88,7 +79,6 @@ public class TVShow {
 	public void addEpisode(Episode toAdd)
 	{
 		episodes.add(toAdd);
-		
 		updateLength();
 		epSort();
 	}

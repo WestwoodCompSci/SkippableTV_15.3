@@ -6,7 +6,7 @@ public class Episode{
 
 	private String name;
 	private int length;		//in minutes
-	private int episodeNumber;	//last two digits are episode numbers, everything before
+	private int episodeNumber;	//just number, changed it, sry
 	private List<Review> reviews;
 	
 	public Episode(String name, int episode, int season, int length, List<Review> reviews)
@@ -14,7 +14,7 @@ public class Episode{
 		this.name = name;
 		this.length =  length;
 		this.reviews = reviews;
-		episodeNumber = season * 100 + episode;
+		episodeNumber = episode;
 	}
 	
 	public int getEpisodeNumber()

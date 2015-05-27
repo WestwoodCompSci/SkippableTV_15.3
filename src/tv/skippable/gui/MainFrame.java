@@ -136,13 +136,13 @@ public class MainFrame extends JFrame {
 			
 			//changing arraylist to array
 			ArrayList<Episode> episodeList1 =  (ArrayList<Episode>) show.getEpisodes();
-			Episode[] actualEpisodeList = new Episode[episodeList1.size()];
+			String[] episodeTitles = new String[episodeList1.size()];
 			for(int i =0; i<episodeList1.size()-1; i++ )
 			{
-				actualEpisodeList[i]=episodeList1.get(i);
+				episodeTitles[i]=episodeList1.get(i).getName();
 			}
 			
-			JComboBox episodeList = new JComboBox (actualEpisodeList);
+			JComboBox episodeList = new JComboBox (episodeTitles);
 			episodeList.setPreferredSize(new Dimension(200,40));
 			episodeList.setMaximumSize(new Dimension(200,40));
 			

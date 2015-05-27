@@ -46,11 +46,14 @@ public class SkippableTVGUIMain {
 					someShowEpisodes.add(new Episode("episode #"+i,i,1,23, someShowReviews));
 				}
 				//create and add show to database
-				data.getshowList().add(new TVShow("Some Show",someShowEpisodes));
+				TVShow someShow=new TVShow("Some Show",someShowEpisodes);
+				data.getshowList().add(someShow);
 				
 				//create and add a user
-				User someUser = new User("some_user","passwords");
+				User someUser = new User("qwe","asd");
 				data.getuserList().add(someUser);
+				
+				someUser.addShow(someShow);
 				
 				LoginDialogue w = new LoginDialogue(data.getuserList());
 				w.setVisible(true);

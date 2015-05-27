@@ -139,7 +139,7 @@ public class MainFrame extends JFrame {
 			Episode[] actualEpisodeList = new Episode[episodeList1.size()];
 			for(int i =0; i<episodeList1.size()-1; i++ )
 			{
-				actualEpisodeList[i].equals(episodeList1.get(i));
+				actualEpisodeList[i]=episodeList1.get(i);
 			}
 			
 			JComboBox episodeList = new JComboBox (actualEpisodeList);

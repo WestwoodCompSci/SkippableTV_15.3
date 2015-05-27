@@ -17,7 +17,7 @@ public class LoginDialogue extends JDialog {
 	private static final long serialVersionUID = -5853916478565948100L;
 
 	private JTextField username;
-	private JPasswordField password;
+	private JTextField password;
 	
 	public LoginDialogue(List<User> users) {
 		this.setTitle("Log In — skippable.tv");
@@ -63,7 +63,7 @@ public class LoginDialogue extends JDialog {
 		JLabel passwordLabel = new JLabel("Password:");
 		formPanel.add(passwordLabel);
 		
-		password = new JPasswordField();
+		password = new JTextField();
 		passwordLabel.setLabelFor(password);
 		formPanel.add(password);
 		
@@ -111,7 +111,7 @@ public class LoginDialogue extends JDialog {
 					username.setText("This user does not exist");
 					password.setText("");
 				}
-				else if(!loginUser.getPassword().equals(password.getPassword())){
+				else if(!loginUser.getPassword().equals(password.getText())){
 					password.setText("");
 					username.setText("Incorrect password");
 				}

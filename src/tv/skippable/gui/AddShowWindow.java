@@ -141,16 +141,16 @@ public class AddShowWindow extends JFrame
 	
 	
 	//TESTER: WILL BE REMOVED
-//public static void main(String[] args)
-//{
-//	SwingUtilities.invokeLater(new Runnable() {
-//
-//		@Override
-//		public void run() 
-//		{
-//			new AddShowWindow();
-//		}} );
-//}
+public static void main(String[] args)
+{
+	SwingUtilities.invokeLater(new Runnable() {
+
+		@Override
+		public void run() 
+		{
+			new AddShowWindow();
+		}} );
+}
 }
 //todo: add art aspect
 //todo: make the buttons do things

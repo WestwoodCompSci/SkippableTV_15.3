@@ -15,6 +15,7 @@ public class Encryption {
 	private static final byte[] keyValue = new byte[]{'F','O','R','T','Y','T','W','O','F','O','R','T','Y','T','W','O'};
 	private static Key key = generateKey();
 	private static String encryptedValue;
+	//Takes a String (DATA) and turns it into an encrypted string that others can't read.
 	public static String encrypt(String DATA) throws Exception
 	{
 		Cipher c = Cipher.getInstance(ALGO);
@@ -23,6 +24,7 @@ public class Encryption {
 		encryptedValue = new BASE64Encoder().encode(encVal);
 		return encryptedValue;
 	}
+	//takes an encrypted String and decrypts it back into the original String.
 	public static String decrypt(String DATA) throws Exception
 	{
 		Cipher c = Cipher.getInstance(ALGO);
@@ -37,6 +39,7 @@ public class Encryption {
 		return dencReturn;
 		
 	}
+	//creates a 16-bit key which is used to encrypt/decrypt a String.
 	public static Key generateKey()
 	{
 		Key key = new SecretKeySpec(keyValue,"AES");

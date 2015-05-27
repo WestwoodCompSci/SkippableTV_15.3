@@ -8,6 +8,7 @@ public class Episode{
 	private int length;		//in minutes
 	private int episodeNumber;	//just number, changed it, sry
 	private List<Review> reviews;
+	private int seasonNumber;
 	
 	public Episode(String name, int episode, int season, int length, List<Review> reviews)
 	{
@@ -15,6 +16,7 @@ public class Episode{
 		this.length =  length;
 		this.reviews = reviews;
 		episodeNumber = episode;
+		seasonNumber = season;
 	}
 	
 	public int getEpisodeNumber()
@@ -35,6 +37,10 @@ public class Episode{
 	public List<Review> getReviews()
 	{
 		return reviews;
+	}
+	
+	public int getSeasonNumber(){
+		return seasonNumber;
 	}
 	
 	public double getRating()
